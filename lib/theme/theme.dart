@@ -8,15 +8,16 @@ ThemeData themeData(BuildContext context) {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    backgroundColor: Colors.blue[400],
-    foregroundColor: Colors.black,
-    iconTheme: const IconThemeData(color: Colors.black),
+    backgroundColor: Colors.blue[500],
+    foregroundColor: Colors.white,
+    iconTheme: const IconThemeData(
+      color: Colors.black,
+    ),
     titleTextStyle: const TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.w600,
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
       color: Colors.black,
     ),
     elevation: 0,
-    centerTitle: true,
   );
 }
