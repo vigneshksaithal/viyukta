@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:viyukta/pages/info_page/info_page.dart';
 
 class TopNavigationBar extends StatelessWidget {
   const TopNavigationBar({
@@ -13,7 +14,14 @@ class TopNavigationBar extends StatelessWidget {
         children: [
           const Text('Viyukta'),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const InfoPage(),
+                ),
+              );
+            },
             icon: const Icon(Icons.info_outline),
             iconSize: 28,
           ),
