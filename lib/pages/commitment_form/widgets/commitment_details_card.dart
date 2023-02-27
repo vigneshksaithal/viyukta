@@ -24,20 +24,20 @@ class CommitmentDetailsCard extends StatelessWidget {
             ),
             const SizedBox(height: 24.0),
             descriptionTextField(),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 24.0),
             amountTextField(),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 24.0),
             Row(
               children: [
                 Text(
                   'Continues?',
                   style: textTheme().labelMedium,
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 16.0),
                 buildSwitch(),
               ],
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 24.0),
             Row(
               children: [
                 Text(
@@ -57,16 +57,20 @@ class CommitmentDetailsCard extends StatelessWidget {
     );
   }
 
-  TextField descriptionTextField() {
-    return TextField(
+  TextFormField descriptionTextField() {
+    return TextFormField(
       decoration: const InputDecoration(
         labelText: 'Description',
       ),
       style: const TextStyle(
         color: Colors.black,
-        fontSize: 16.0,
+        fontSize: 18.0,
+        fontWeight: FontWeight.normal,
       ),
       controller: descriptionController,
+      maxLength: 80,
+      minLines: 3,
+      maxLines: 3,
     );
   }
 

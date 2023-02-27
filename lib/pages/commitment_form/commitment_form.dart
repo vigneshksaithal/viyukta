@@ -4,8 +4,8 @@ import 'widgets/commitment_details_card.dart';
 import 'widgets/general_details_card.dart';
 import 'widgets/top_navigation_bar.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class CommitmentForm extends StatelessWidget {
+  const CommitmentForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +17,13 @@ class HomePage extends StatelessWidget {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Flex(
-              direction: Axis.vertical,
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 16.0,
+              horizontal: 8.0,
+            ),
+            child: Column(
               children: <Widget>[
-                const SizedBox(height: 16.0),
                 SizedBox(
                   width: double.infinity,
                   // height: ,
@@ -33,9 +34,7 @@ class HomePage extends StatelessWidget {
                   width: double.infinity,
                   child: CommitmentDetailsCard(),
                 ),
-                const SizedBox(
-                  height: 16.0,
-                ),
+                const SizedBox(height: 16.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [

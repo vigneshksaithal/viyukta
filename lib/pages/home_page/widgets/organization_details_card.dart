@@ -18,13 +18,18 @@ class OrganizationDetailsCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              'Organization Details',
+              style: textTheme().titleMedium,
+            ),
+            const SizedBox(height: 24.0),
             Row(
               children: [
                 Text(
-                  'Organization:',
+                  'Name:',
                   style: textTheme().labelMedium,
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 8.0),
                 Text(
                   organizationName,
                   style: textTheme().bodyMedium,
@@ -35,10 +40,24 @@ class OrganizationDetailsCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Organization Code:',
+                  'Code:',
                   style: textTheme().labelMedium,
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 8.0),
+                Text(
+                  organizationCode,
+                  style: textTheme().bodyMedium,
+                ),
+              ],
+            ),
+            const SizedBox(height: 16.0),
+            Row(
+              children: [
+                Text(
+                  'Officer:',
+                  style: textTheme().labelMedium,
+                ),
+                const SizedBox(width: 8.0),
                 Text(
                   organizationCode,
                   style: textTheme().bodyMedium,
