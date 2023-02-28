@@ -21,11 +21,11 @@ OutlinedButtonThemeData outlineButtonThemeData() {
         borderRadius: BorderRadius.circular(5),
       ),
       padding: const EdgeInsets.symmetric(
-        horizontal: 24,
-        vertical: 12,
+        horizontal: 16.0,
+        vertical: 12.0,
       ),
       textStyle: const TextStyle(
-        fontSize: 16.0,
+        fontSize: 14.0,
         fontWeight: FontWeight.w500,
       ),
     ),
@@ -80,6 +80,11 @@ TextTheme textTheme() {
       fontSize: 18,
       fontWeight: FontWeight.w500,
       color: Colors.grey[600],
+    ),
+    bodySmall: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: Colors.grey[800],
     ),
   );
 }

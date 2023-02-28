@@ -3,20 +3,74 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class CommitmentList {
   List<Map> commitmentList = [
     {
-      'organizationName': 'Yemen School',
-      'description': 'School for Yemeni children',
-      'amount': 12500,
-      'commitmentDate': DateTime.now(),
-      'prevCommitmentRequestNumber': 0,
-      'commitmentRequestNumber': null,
+      'description': 'School unfiforms for 2023/2024 academic year',
+      'amount': 15500,
+      'date': DateTime.now(),
+      'requestNumber': 'STSC200004',
       'isContinued': false,
       'isApproved': false,
-    }
+    },
+    {
+      'description': 'Lab equipment for Yemeni children',
+      'amount': 25000,
+      'date': DateTime.now(),
+      'requestNumber': 'STSC200003',
+      'isContinued': false,
+      'isApproved': true,
+    },
+    {
+      'description': 'Buying new 20L water filter',
+      'amount': 5000,
+      'date': DateTime.now(),
+      'requestNumber': 'STSC200002',
+      'isContinued': false,
+      'isApproved': true,
+    },
+    {
+      'description': 'Electricity bill for 2023/2024 academic year',
+      'amount': 45000,
+      'date': DateTime.now(),
+      'requestNumber': 'STSC200001',
+      'isContinued': false,
+      'isApproved': false,
+    },
+    {
+      'description': 'Electricity bill for 2023/2024 academic year',
+      'amount': 45000,
+      'date': DateTime.now(),
+      'requestNumber': 'STSC200001',
+      'isContinued': false,
+      'isApproved': false,
+    },
+    {
+      'description': 'Electricity bill for 2023/2024 academic year',
+      'amount': 47000,
+      'date': DateTime.now(),
+      'requestNumber': 'STSC200001',
+      'isContinued': false,
+      'isApproved': true,
+    },
+    {
+      'description': 'Electricity bill for 2023/2024 academic year',
+      'amount': 89000,
+      'date': DateTime.now(),
+      'requestNumber': 'STSC200001',
+      'isContinued': false,
+      'isApproved': true,
+    },
+    {
+      'description': 'Electricity bill for 2023/2024 academic year',
+      'amount': 34000,
+      'date': DateTime.now(),
+      'requestNumber': 'STSC200001',
+      'isContinued': false,
+      'isApproved': true,
+    },
   ];
 }
 
-class CommitmentNotifier extends StateNotifier<CommitmentList> {
-  CommitmentNotifier() : super(CommitmentList()) {
+class CommitmentListNotifier extends StateNotifier<CommitmentList> {
+  CommitmentListNotifier() : super(CommitmentList()) {
     // call init function here
     getDateFromLocal();
   }
@@ -25,6 +79,6 @@ class CommitmentNotifier extends StateNotifier<CommitmentList> {
 }
 
 final commitmentListProvider =
-    StateNotifierProvider<CommitmentNotifier, CommitmentList>((ref) {
-  return CommitmentNotifier();
+    StateNotifierProvider<CommitmentListNotifier, CommitmentList>((ref) {
+  return CommitmentListNotifier();
 });

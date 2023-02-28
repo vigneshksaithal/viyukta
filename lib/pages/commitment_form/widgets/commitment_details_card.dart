@@ -47,7 +47,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
             Row(
               children: [
                 Text(
-                  'Request Payment Date',
+                  'Payment Date',
                   style: textTheme().labelMedium,
                 ),
                 const SizedBox(width: 16.0),

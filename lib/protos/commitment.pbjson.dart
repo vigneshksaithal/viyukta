@@ -12,12 +12,15 @@ import 'dart:typed_data' as $typed_data;
 const CommitmentProto$json = const {
   '1': 'CommitmentProto',
   '2': const [
-    const {'1': 'commitmentRequestNumber', '3': 1, '4': 1, '5': 9, '10': 'commitmentRequestNumber'},
+    const {'1': 'requestNumber', '3': 1, '4': 1, '5': 9, '10': 'requestNumber'},
     const {'1': 'date', '3': 2, '4': 1, '5': 9, '10': 'date'},
     const {'1': 'type', '3': 3, '4': 1, '5': 9, '10': 'type'},
-    const {'1': 'amount', '3': 4, '4': 1, '5': 2, '10': 'amount'},
+    const {'1': 'amount', '3': 4, '4': 1, '5': 9, '10': 'amount'},
+    const {'1': 'isContinued', '3': 5, '4': 1, '5': 8, '10': 'isContinued'},
+    const {'1': 'isApproved', '3': 6, '4': 1, '5': 8, '10': 'isApproved'},
+    const {'1': 'description', '3': 7, '4': 1, '5': 9, '10': 'description'},
   ],
 };
 
 /// Descriptor for `CommitmentProto`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List commitmentProtoDescriptor = $convert.base64Decode('Cg9Db21taXRtZW50UHJvdG8SOAoXY29tbWl0bWVudFJlcXVlc3ROdW1iZXIYASABKAlSF2NvbW1pdG1lbnRSZXF1ZXN0TnVtYmVyEhIKBGRhdGUYAiABKAlSBGRhdGUSEgoEdHlwZRgDIAEoCVIEdHlwZRIWCgZhbW91bnQYBCABKAJSBmFtb3VudA==');
+final $typed_data.Uint8List commitmentProtoDescriptor = $convert.base64Decode('Cg9Db21taXRtZW50UHJvdG8SJAoNcmVxdWVzdE51bWJlchgBIAEoCVINcmVxdWVzdE51bWJlchISCgRkYXRlGAIgASgJUgRkYXRlEhIKBHR5cGUYAyABKAlSBHR5cGUSFgoGYW1vdW50GAQgASgJUgZhbW91bnQSIAoLaXNDb250aW51ZWQYBSABKAhSC2lzQ29udGludWVkEh4KCmlzQXBwcm92ZWQYBiABKAhSCmlzQXBwcm92ZWQSIAoLZGVzY3JpcHRpb24YByABKAlSC2Rlc2NyaXB0aW9u');

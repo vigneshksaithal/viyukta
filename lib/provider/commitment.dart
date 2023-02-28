@@ -1,5 +1,7 @@
+import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 
 import '../protos/commitment.pb.dart';
 
@@ -11,6 +13,7 @@ class Commitment {
   int prevCommitmentRequestNumber = 0;
   String? commitmentRequestNumber;
   bool isContinued = false;
+  String smsText = '';
 
   Commitment({
     required this.descriptionController,
@@ -19,6 +22,7 @@ class Commitment {
     required this.prevCommitmentRequestNumber,
     required this.commitmentRequestNumber,
     required this.isContinued,
+    this.smsText = '',
   });
 
   Commitment copyWith({
@@ -29,6 +33,7 @@ class Commitment {
     int? prevCommitmentRequestNumber,
     String? commitmentRequestNumber,
     bool? isContinued,
+    String? smsText,
   }) {
     return Commitment(
       descriptionController:
@@ -40,6 +45,7 @@ class Commitment {
       commitmentRequestNumber:
           commitmentRequestNumber ?? this.commitmentRequestNumber,
       isContinued: isContinued ?? this.isContinued,
+      smsText: smsText ?? this.smsText,
     );
   }
 }
@@ -62,7 +68,7 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
 
   String generateCommitmentRequestNumber(
       String stateCode, String departmentCode) {
-    return '$stateCode-$departmentCode-${DateTime.now().toUtc()}';
+    return '$stateCode-$departmentCode-${DateTime.now()}';
   }
 
   void toggleContinued() {
@@ -71,18 +77,33 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
 
   Future<String> serializeData() async {
     final commitment = CommitmentProto()
-      ..commitmentRequestNumber = '01-005-200001'
+      ..requestNumber = '01-005-200001'
       ..date = DateTime.now().toUtc().toString()
-      ..amount = double.parse(state.amountController.text);
-
-    print(commitment.writeToBuffer());
+      ..amount = state.amountController.text
+      ..description = state.descriptionController.text
+      ..isContinued = state.isContinued
+      ..isApproved = false;
 
     return commitment.writeToBuffer().toString();
   }
 
   Future<void> saveData() async {}
 
-  Future<void> sendSMS() async {}
+  Future<void> encryptText() async {
+    const text = 'This is a secret message.';
+    final key = encrypt.Key.fromUtf8('my 32 length key................');
+    final iv = encrypt.IV.fromLength(16);
+
+    final encrypter = encrypt.Encrypter(encrypt.AES(key));
+
+    final encrypted = encrypter.encrypt(text, iv: iv);
+
+    state.smsText = encrypted.base64;
+
+    state = state.copyWith(smsText: encrypted.base64);
+  }
+
+  Future<void> descryptText() async {}
 }
 
 final commitmentProvider =

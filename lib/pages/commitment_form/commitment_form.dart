@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 
+import '../../provider/commitment.dart';
 import 'widgets/commitment_details_card.dart';
 import 'widgets/general_details_card.dart';
 
-class CommitmentForm extends StatelessWidget {
+class CommitmentForm extends ConsumerWidget {
   const CommitmentForm({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
@@ -28,7 +31,7 @@ class CommitmentForm extends StatelessWidget {
                   child: GeneralDetailsCard(),
                 ),
                 const SizedBox(height: 16.0),
-                SizedBox(
+                const SizedBox(
                   width: double.infinity,
                   child: CommitmentDetailsCard(),
                 ),
@@ -42,7 +45,22 @@ class CommitmentForm extends StatelessWidget {
                     ),
                     const SizedBox(width: 16),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        await ref
+                            .read(commitmentProvider.notifier)
+                            .encryptText();
+
+                        await ref.read(commitmentProvider.notifier).saveData();
+
+                        String message = "This is a test message!";
+                        List<String> recipents = ["9353924958"];
+
+                        await sendSMS(
+                          message: message,
+                          recipients: recipents,
+                          sendDirect: true,
+                        );
+                      },
                       child: const Text('Submit'),
                     ),
                   ],

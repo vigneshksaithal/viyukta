@@ -7,4 +7,5 @@ message CommitmentProto {
     string amount = 4;
     bool isContinued = 5;
     bool isApproved = 6;
+    string description = 7;
 }
