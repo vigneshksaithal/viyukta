@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message CommitmentProto {
+    string commitmentRequestNumber  = 1;
+    string date = 2;
+    string type = 3;
+    float amount = 4;
+}

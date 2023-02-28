@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 ThemeData themeData(BuildContext context) {
   return ThemeData(
+    scaffoldBackgroundColor: Colors.grey[100],
     appBarTheme: appBarTheme(),
     // primaryColor: Colors.blue[500],
     elevatedButtonTheme: elevatedButtonTheme(context),
@@ -10,7 +11,6 @@ ThemeData themeData(BuildContext context) {
     textTheme: textTheme(),
     cardTheme: cardTheme(),
     inputDecorationTheme: inputDecorationTheme(),
-    scaffoldBackgroundColor: Colors.grey[100],
   );
 }
 
@@ -123,12 +123,12 @@ AppBarTheme appBarTheme() {
     backgroundColor: Colors.blue[500],
     foregroundColor: Colors.white,
     iconTheme: const IconThemeData(
-      color: Colors.black,
+      color: Colors.white,
     ),
     titleTextStyle: const TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w400,
-      color: Colors.black,
+      color: Colors.white,
     ),
     elevation: 0,
   );

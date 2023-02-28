@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:messagepack/messagepack.dart';
-import 'package:viyukta/provider/commitment_provider.dart';
 
+import '../../../provider/commitment.dart';
 import '../../../theme/theme.dart';
 
 class GeneralDetailsCard extends ConsumerWidget {
@@ -12,39 +11,11 @@ class GeneralDetailsCard extends ConsumerWidget {
 
   final _formKey = GlobalKey<FormState>();
 
-  // String businessName = useProvider(commitmentProvider).businessName.toString();
-
-  // var businessNameController = useTextEditingController();
-
-  // useEffect(() {
-  // businessNameController.text = businessName;
-  // });
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final commtmentProvider = ref.watch(commitmentProvider);
     final commitmentDate = commtmentProvider.commitmentDate;
     String? commitmentRequestNumber = commtmentProvider.commitmentRequestNumber;
-
-    void simple() {
-      final p = Packer()
-        ..packString('key1') //pack key1
-        ..packString('100-109-20001') //pack value1
-        ..packString('key2') //pack key2
-        ..packDouble(300000.65);
-
-      final bytes = p.takeBytes(); //Uint8List
-
-      print('Length: ${p.takeBytes()}');
-
-      final u = Unpacker(bytes);
-
-      final n1 = u.unpackString();
-      final n2 = u.unpackString();
-      // print('unpacked n1=$n1 n2=$n2');
-
-      // print('unpack bytes: ${Unpacker.fromList(bytes).toString()}');
-    }
 
     return Card(
       child: Form(
@@ -62,10 +33,10 @@ class GeneralDetailsCard extends ConsumerWidget {
               Row(
                 children: [
                   Text(
-                    'Submission Date $commitmentRequestNumber',
+                    'Submission Date',
                     style: textTheme().labelMedium,
                   ),
-                  const SizedBox(width: 16.0),
+                  const SizedBox(width: 8.0),
                   Text(
                     '${commitmentDate.day}/${commitmentDate.month}/${commitmentDate.year}',
                   ),
@@ -94,7 +65,7 @@ class GeneralDetailsCard extends ConsumerWidget {
                   const SizedBox(width: 16.0),
                   OutlinedButton(
                     onPressed: () {
-                      simple();
+                      ref.read(commitmentProvider.notifier).serializeData();
                     },
                     child: const Text('Choose type'),
                   ),

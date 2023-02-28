@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'widgets/commitment_details_card.dart';
 import 'widgets/general_details_card.dart';
-import 'widgets/top_navigation_bar.dart';
 
 class CommitmentForm extends StatelessWidget {
   const CommitmentForm({super.key});
@@ -11,9 +10,8 @@ class CommitmentForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(50),
-        child: TopNavigationBar(),
+      appBar: AppBar(
+        title: const Text('Commitment Form'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(

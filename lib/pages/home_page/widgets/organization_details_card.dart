@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:viyukta/provider/organization_details.dart';
 
 import '../../../theme/theme.dart';
 
-class OrganizationDetailsCard extends StatelessWidget {
+class OrganizationDetailsCard extends ConsumerWidget {
   const OrganizationDetailsCard({
     super.key,
   });
@@ -11,7 +13,7 @@ class OrganizationDetailsCard extends StatelessWidget {
   final String organizationCode = 'YMN-SC-001';
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -31,7 +33,7 @@ class OrganizationDetailsCard extends StatelessWidget {
                 ),
                 const SizedBox(width: 8.0),
                 Text(
-                  organizationName,
+                  ref.read(organizationDetailsProvider).organizationName,
                   style: textTheme().bodyMedium,
                 ),
               ],
@@ -45,7 +47,7 @@ class OrganizationDetailsCard extends StatelessWidget {
                 ),
                 const SizedBox(width: 8.0),
                 Text(
-                  organizationCode,
+                  ref.read(organizationDetailsProvider).organizationCode,
                   style: textTheme().bodyMedium,
                 ),
               ],
@@ -54,12 +56,12 @@ class OrganizationDetailsCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Officer:',
+                  'Head:',
                   style: textTheme().labelMedium,
                 ),
                 const SizedBox(width: 8.0),
                 Text(
-                  organizationCode,
+                  ref.read(organizationDetailsProvider).organizationHead,
                   style: textTheme().bodyMedium,
                 ),
               ],

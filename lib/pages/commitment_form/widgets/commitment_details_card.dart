@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../provider/commitment.dart';
 import '../../../theme/theme.dart';
 
-class CommitmentDetailsCard extends StatelessWidget {
+class CommitmentDetailsCard extends ConsumerWidget {
   CommitmentDetailsCard({super.key});
 
   final amountController = TextEditingController();
   final descriptionController = TextEditingController();
 
-  final bool value = false;
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    bool isContinued = ref.watch(commitmentProvider).isContinued;
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -34,7 +36,14 @@ class CommitmentDetailsCard extends StatelessWidget {
                   style: textTheme().labelMedium,
                 ),
                 const SizedBox(width: 16.0),
-                buildSwitch(),
+                Switch(
+                  value: isContinued,
+                  onChanged: (value) {
+                    ref.read(commitmentProvider.notifier).toggleContinued();
+                    print(
+                        'isContinued: $value, PROVIDE: ${ref.read(commitmentProvider).isContinued}');
+                  },
+                ),
               ],
             ),
             const SizedBox(height: 24.0),
@@ -78,7 +87,6 @@ class CommitmentDetailsCard extends StatelessWidget {
     return TextField(
       decoration: const InputDecoration(
         labelText: 'Amount',
-        prefixIcon: Icon(Icons.attach_money_outlined),
       ),
       style: const TextStyle(
         color: Colors.black,
@@ -88,9 +96,4 @@ class CommitmentDetailsCard extends StatelessWidget {
       keyboardType: TextInputType.number,
     );
   }
-
-  Widget buildSwitch() => Switch.adaptive(
-        value: value,
-        onChanged: (value) {},
-      );
 }
