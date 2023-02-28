@@ -5,10 +5,7 @@ import '../../../provider/commitment.dart';
 import '../../../theme/theme.dart';
 
 class CommitmentDetailsCard extends ConsumerWidget {
-  CommitmentDetailsCard({super.key});
-
-  final amountController = TextEditingController();
-  final descriptionController = TextEditingController();
+  const CommitmentDetailsCard({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,9 +22,9 @@ class CommitmentDetailsCard extends ConsumerWidget {
               style: textTheme().titleMedium,
             ),
             const SizedBox(height: 24.0),
-            descriptionTextField(),
+            descriptionTextField(ref),
             const SizedBox(height: 24.0),
-            amountTextField(),
+            amountTextField(ref),
             const SizedBox(height: 24.0),
             Row(
               children: [
@@ -66,7 +63,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
     );
   }
 
-  TextFormField descriptionTextField() {
+  TextFormField descriptionTextField(WidgetRef ref) {
     return TextFormField(
       decoration: const InputDecoration(
         labelText: 'Description',
@@ -76,14 +73,14 @@ class CommitmentDetailsCard extends ConsumerWidget {
         fontSize: 18.0,
         fontWeight: FontWeight.normal,
       ),
-      controller: descriptionController,
+      controller: ref.watch(commitmentProvider).descriptionController,
       maxLength: 80,
       minLines: 3,
       maxLines: 3,
     );
   }
 
-  TextField amountTextField() {
+  TextField amountTextField(WidgetRef ref) {
     return TextField(
       decoration: const InputDecoration(
         labelText: 'Amount',
@@ -92,7 +89,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
         color: Colors.black,
         fontSize: 16.0,
       ),
-      controller: amountController,
+      controller: ref.watch(commitmentProvider).amountController,
       keyboardType: TextInputType.number,
     );
   }

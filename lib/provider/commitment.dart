@@ -4,10 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../protos/commitment.pb.dart';
 
 class Commitment {
-  TextEditingController businessNameController =
-          TextEditingController(text: ''),
-      descriptionController = TextEditingController(),
-      amountController = TextEditingController(text: '10');
+  TextEditingController descriptionController = TextEditingController(),
+      amountController = TextEditingController();
 
   DateTime commitmentDate = DateTime.now();
   int prevCommitmentRequestNumber = 0;
@@ -15,7 +13,6 @@ class Commitment {
   bool isContinued = false;
 
   Commitment({
-    required this.businessNameController,
     required this.descriptionController,
     required this.amountController,
     required this.commitmentDate,
@@ -34,8 +31,6 @@ class Commitment {
     bool? isContinued,
   }) {
     return Commitment(
-      businessNameController:
-          businessNameController ?? this.businessNameController,
       descriptionController:
           descriptionController ?? this.descriptionController,
       amountController: amountController ?? this.amountController,
@@ -52,9 +47,8 @@ class Commitment {
 class CommitmentNotifier extends StateNotifier<Commitment> {
   CommitmentNotifier()
       : super(Commitment(
-          businessNameController: TextEditingController(text: ''),
           descriptionController: TextEditingController(),
-          amountController: TextEditingController(text: '10'),
+          amountController: TextEditingController(),
           commitmentDate: DateTime.now(),
           prevCommitmentRequestNumber: 0,
           commitmentRequestNumber: null,
@@ -79,7 +73,7 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
     final commitment = CommitmentProto()
       ..commitmentRequestNumber = '01-005-200001'
       ..date = DateTime.now().toUtc().toString()
-      ..amount = 123456789;
+      ..amount = double.parse(state.amountController.text);
 
     print(commitment.writeToBuffer());
 
