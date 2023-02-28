@@ -75,7 +75,7 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
     state = state.copyWith(isContinued: !state.isContinued);
   }
 
-  Future<String> serializeData() async {
+  Future<void> serializeData() async {
     final commitment = CommitmentProto()
       ..requestNumber = '01-005-200001'
       ..date = DateTime.now().toUtc().toString()
@@ -84,13 +84,12 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
       ..isContinued = state.isContinued
       ..isApproved = false;
 
-    return commitment.writeToBuffer().toString();
+    encryptText(commitment.writeToBuffer().toString());
   }
 
   Future<void> saveData() async {}
 
-  Future<void> encryptText() async {
-    const text = 'This is a secret message.';
+  Future<void> encryptText(String text) async {
     final key = encrypt.Key.fromUtf8('my 32 length key................');
     final iv = encrypt.IV.fromLength(16);
 

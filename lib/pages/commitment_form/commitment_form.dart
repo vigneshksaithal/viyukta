@@ -46,13 +46,7 @@ class CommitmentForm extends ConsumerWidget {
                     const SizedBox(width: 16),
                     ElevatedButton(
                       onPressed: () async {
-                        await ref
-                            .read(commitmentProvider.notifier)
-                            .encryptText();
-
-                        await ref.read(commitmentProvider.notifier).saveData();
-
-                        String message = "This is a test message!";
+                        String message = ref.read(commitmentProvider).smsText;
                         List<String> recipents = ["9353924958"];
 
                         await sendSMS(
