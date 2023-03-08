@@ -24,7 +24,7 @@ class OrganizationDetailsCard extends ConsumerWidget {
               'Organization Details',
               style: textTheme().titleMedium,
             ),
-            const SizedBox(height: 24.0),
+            const SizedBox(height: 32.0),
             Row(
               children: [
                 Text(
