@@ -12,7 +12,6 @@ class CommitmentForm extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: const Text('Commitment Form'),
       ),
@@ -21,7 +20,7 @@ class CommitmentForm extends ConsumerWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(
               vertical: 16.0,
-              horizontal: 8.0,
+              horizontal: 16.0,
             ),
             child: Column(
               children: <Widget>[
@@ -30,12 +29,12 @@ class CommitmentForm extends ConsumerWidget {
                   // height: ,
                   child: GeneralDetailsCard(),
                 ),
-                const SizedBox(height: 16.0),
+                const SizedBox(height: 24.0),
                 const SizedBox(
                   width: double.infinity,
                   child: CommitmentDetailsCard(),
                 ),
-                const SizedBox(height: 16.0),
+                const SizedBox(height: 24.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [

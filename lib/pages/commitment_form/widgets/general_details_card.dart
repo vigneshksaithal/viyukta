@@ -29,7 +29,7 @@ class GeneralDetailsCard extends ConsumerWidget {
                 'General Details',
                 style: textTheme().titleMedium,
               ),
-              const SizedBox(height: 24.0),
+              const SizedBox(height: 32.0),
               Row(
                 children: [
                   Text(
@@ -42,11 +42,11 @@ class GeneralDetailsCard extends ConsumerWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 24.0),
+              const SizedBox(height: 32),
               Row(
                 children: [
                   Text(
-                    'Commitment Request Number',
+                    'Commitment Request Number (CRN)',
                     style: textTheme().labelMedium,
                   ),
                 ],
@@ -55,7 +55,7 @@ class GeneralDetailsCard extends ConsumerWidget {
               Text(
                 '$commitmentRequestNumber',
               ),
-              const SizedBox(height: 24.0),
+              const SizedBox(height: 32.0),
               Row(
                 children: [
                   Text(

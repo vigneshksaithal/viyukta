@@ -38,7 +38,7 @@ class OrganizationDetailsCard extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 24.0),
             Row(
               children: [
                 Text(
@@ -52,7 +52,7 @@ class OrganizationDetailsCard extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 24.0),
             Row(
               children: [
                 Text(

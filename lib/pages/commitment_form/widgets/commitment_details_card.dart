@@ -21,11 +21,11 @@ class CommitmentDetailsCard extends ConsumerWidget {
               'Commitment Details',
               style: textTheme().titleMedium,
             ),
-            const SizedBox(height: 24.0),
+            const SizedBox(height: 32.0),
             descriptionTextField(ref),
-            const SizedBox(height: 24.0),
+            const SizedBox(height: 32.0),
             amountTextField(ref),
-            const SizedBox(height: 24.0),
+            const SizedBox(height: 32.0),
             Row(
               children: [
                 Text(
@@ -43,7 +43,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 24.0),
+            const SizedBox(height: 32.0),
             Row(
               children: [
                 Text(

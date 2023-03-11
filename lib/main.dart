@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:viyukta/pages/home_page/home_page.dart';
-// import 'package:hive/hive.dart';
 
 import 'theme/theme.dart';
 

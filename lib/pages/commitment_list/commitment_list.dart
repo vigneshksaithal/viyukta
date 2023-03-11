@@ -8,6 +8,8 @@ class CommitmentListPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    List commitmentList = ref.watch(commitmentListProvider).commitmentList;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Commitment List'),
@@ -15,28 +17,26 @@ class CommitmentListPage extends ConsumerWidget {
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(
-            vertical: 16.0,
-            horizontal: 8.0,
+            vertical: 16,
+            horizontal: 8,
           ),
           child: ListView.builder(
-            itemCount: ref.watch(commitmentListProvider).commitmentList.length,
+            itemCount: commitmentList.length,
             itemBuilder: (context, index) {
-              final commitmentList =
-                  ref.watch(commitmentListProvider).commitmentList;
-
               final commitment = commitmentList[index];
               return Container(
                 decoration: const BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
                       width: 0.5,
+                      color: Colors.grey,
                     ),
                   ),
                 ),
                 child: ListTile(
                   contentPadding: const EdgeInsets.symmetric(
-                    vertical: 8.0,
-                    horizontal: 8.0,
+                    vertical: 16,
+                    horizontal: 8,
                   ),
                   onTap: () {},
                   title: Column(
@@ -49,12 +49,13 @@ class CommitmentListPage extends ConsumerWidget {
                             color: Colors.grey[800],
                             fontWeight: FontWeight.w500),
                       ),
-                      const SizedBox(height: 16.0),
+                      const SizedBox(height: 24),
                       Text(
                         '${commitment['requestNumber']}',
                         style: textTheme().bodySmall?.copyWith(
                               color: Colors.grey[600],
                               fontWeight: FontWeight.w600,
+                              overflow: TextOverflow.clip,
                             ),
                       ),
                     ],
@@ -70,7 +71,7 @@ class CommitmentListPage extends ConsumerWidget {
                                   : Colors.red[600],
                             ),
                       ),
-                      const SizedBox(height: 16.0),
+                      const SizedBox(height: 24),
                       Text(
                         '${commitment['amount']}',
                         style: textTheme().bodySmall?.copyWith(

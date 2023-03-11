@@ -4,8 +4,6 @@ import 'package:viyukta/pages/commitment_form/commitment_form.dart';
 import 'package:viyukta/pages/commitment_list/commitment_list.dart';
 import 'package:viyukta/pages/home_page/widgets/organization_details_card.dart';
 
-import '../../theme/theme.dart';
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -13,26 +11,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Viyukta'),
+        title: const Text('Welcome to Viyukta'),
       ),
       body: SafeArea(
         child: Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(
             vertical: 16.0,
-            horizontal: 8.0,
+            horizontal: 16.0,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Welcome! ',
-                  style: textTheme().titleLarge,
-                ),
-              ),
-              const SizedBox(height: 16.0),
               const OrganizationDetailsCard(),
               const SizedBox(height: 24.0),
               ElevatedButton(
@@ -45,7 +35,7 @@ class HomePage extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Create New Commitment'),
+                child: const Text('Create new commitment'),
               ),
               const SizedBox(height: 16.0),
               OutlinedButton(
@@ -58,7 +48,7 @@ class HomePage extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('View All Commitments'),
+                child: const Text('View all commitments'),
               ),
               const SizedBox(height: 16.0),
             ],

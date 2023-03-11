@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 ThemeData themeData(BuildContext context) {
   return ThemeData(
-    scaffoldBackgroundColor: Colors.grey[100],
+    scaffoldBackgroundColor: Colors.grey[200],
     appBarTheme: appBarTheme(),
-    // primaryColor: Colors.blue[500],
+    // primaryColor: Colors.green[500],
     elevatedButtonTheme: elevatedButtonTheme(context),
     outlinedButtonTheme: outlineButtonThemeData(),
     textButtonTheme: textButtonTheme(),
@@ -21,11 +21,11 @@ OutlinedButtonThemeData outlineButtonThemeData() {
         borderRadius: BorderRadius.circular(5),
       ),
       padding: const EdgeInsets.symmetric(
-        horizontal: 16.0,
-        vertical: 12.0,
+        horizontal: 24.0,
+        vertical: 16.0,
       ),
       textStyle: const TextStyle(
-        fontSize: 14.0,
+        fontSize: 16.0,
         fontWeight: FontWeight.w500,
       ),
     ),
@@ -51,7 +51,16 @@ InputDecorationTheme inputDecorationTheme() {
 }
 
 CardTheme cardTheme() {
-  return const CardTheme();
+  return CardTheme(
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(8.0),
+      ),
+    ),
+    elevation: 1,
+    margin: const EdgeInsets.all(0),
+    color: Colors.grey[100],
+  );
 }
 
 TextTheme textTheme() {
@@ -62,7 +71,7 @@ TextTheme textTheme() {
       color: Colors.grey[900],
     ),
     titleMedium: TextStyle(
-      fontSize: 24,
+      fontSize: 26,
       fontWeight: FontWeight.w600,
       color: Colors.grey[900],
     ),
@@ -108,11 +117,11 @@ ElevatedButtonThemeData elevatedButtonTheme(context) {
   return ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(5.0),
       ),
       padding: const EdgeInsets.symmetric(
-        horizontal: 24,
-        vertical: 12,
+        horizontal: 24.0,
+        vertical: 14.0,
       ),
       backgroundColor: Theme.of(context).primaryColor,
       textStyle: const TextStyle(
@@ -125,16 +134,19 @@ ElevatedButtonThemeData elevatedButtonTheme(context) {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    backgroundColor: Colors.blue[500],
+    backgroundColor: Colors.blue[400],
     foregroundColor: Colors.white,
     iconTheme: const IconThemeData(
-      color: Colors.white,
+      color: Colors.black,
     ),
     titleTextStyle: const TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w400,
-      color: Colors.white,
+      color: Colors.black,
     ),
     elevation: 0,
+    scrolledUnderElevation: 2,
+    titleSpacing: 16.0,
+    surfaceTintColor: Colors.amber,
   );
 }
