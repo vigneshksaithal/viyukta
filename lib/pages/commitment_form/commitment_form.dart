@@ -22,6 +22,7 @@ class CommitmentForm extends ConsumerWidget {
               vertical: 16.0,
               horizontal: 16.0,
             ),
+            // Delete this comment
             child: Column(
               children: <Widget>[
                 SizedBox(
