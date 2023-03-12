@@ -31,6 +31,7 @@ class GeneralDetailsCard extends ConsumerWidget {
               ),
               const SizedBox(height: 32.0),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Submission Date',
@@ -42,7 +43,7 @@ class GeneralDetailsCard extends ConsumerWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 32),
+              const Divider(),
               Row(
                 children: [
                   Text(
@@ -55,8 +56,9 @@ class GeneralDetailsCard extends ConsumerWidget {
               Text(
                 '$commitmentRequestNumber',
               ),
-              const SizedBox(height: 32.0),
+              const Divider(),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Request Type',

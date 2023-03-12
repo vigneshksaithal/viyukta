@@ -23,10 +23,11 @@ class CommitmentDetailsCard extends ConsumerWidget {
             ),
             const SizedBox(height: 32.0),
             descriptionTextField(ref),
-            const SizedBox(height: 32.0),
+            const Divider(),
             amountTextField(ref),
-            const SizedBox(height: 32.0),
+            const Divider(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'Continues?',
@@ -43,7 +44,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 32.0),
+            const Divider(),
             Row(
               children: [
                 Text(
