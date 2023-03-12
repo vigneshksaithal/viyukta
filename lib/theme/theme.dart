@@ -19,10 +19,7 @@ DividerThemeData dividerThemeData() {
   return DividerThemeData(
     color: Colors.grey[300],
     thickness: 1.0,
-    space: 36.0,
-
-    // indent: 10.0,
-    // endIndent: 10.0,
+    space: 44.0,
   );
 }
 
