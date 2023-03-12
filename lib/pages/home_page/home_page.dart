@@ -13,20 +13,6 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Viyukta'),
         automaticallyImplyLeading: true,
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                PageTransition(
-                  type: PageTransitionType.rightToLeftWithFade,
-                  child: const CommitmentForm(),
-                ),
-              );
-            },
-            child: const Text('+ Create Commitment'),
-          ),
-        ],
       ),
       body: SafeArea(
         child: Container(
@@ -38,25 +24,20 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.end,
-              //   children: [
-              //     ElevatedButton(
-              //       onPressed: () {
-              //         Navigator.push(
-              //           context,
-              //           PageTransition(
-              //             type: PageTransitionType.rightToLeftWithFade,
-              //             child: const CommitmentForm(),
-              //           ),
-              //         );
-              //       },
-              //       child: const Text('+ Create Commitment'),
-              //     ),
-              //   ],
-              // ),
-              const SizedBox(height: 16.0),
               const OrganizationDetailsCard(),
+              const SizedBox(height: 24.0),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.rightToLeftWithFade,
+                      child: const CommitmentForm(),
+                    ),
+                  );
+                },
+                child: const Text('+ Create Commitment'),
+              ),
               const SizedBox(height: 24.0),
               TextButton(
                 onPressed: () {
