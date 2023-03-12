@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const OrganizationDetailsCard(),
-              const SizedBox(height: 24.0),
+              const SizedBox(height: 32.0),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
