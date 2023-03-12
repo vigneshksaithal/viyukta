@@ -21,7 +21,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
               'Commitment Details',
               style: textTheme().titleMedium,
             ),
-            const SizedBox(height: 32.0),
+            const SizedBox(height: 48.0),
             descriptionTextField(ref),
             const Divider(),
             amountTextField(ref),

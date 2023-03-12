@@ -29,7 +29,7 @@ class GeneralDetailsCard extends ConsumerWidget {
                 'General Details',
                 style: textTheme().titleMedium,
               ),
-              const SizedBox(height: 32.0),
+              const SizedBox(height: 48.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
