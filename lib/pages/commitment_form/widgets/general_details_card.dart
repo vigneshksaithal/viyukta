@@ -39,7 +39,7 @@ class GeneralDetailsCard extends ConsumerWidget {
                   ),
                   const SizedBox(width: 8.0),
                   Text(
-                    '${commitmentDate.day}/${commitmentDate.month}/${commitmentDate.year}',
+                    '${commitmentDate?.day}/${commitmentDate?.month}/${commitmentDate?.year}',
                   ),
                 ],
               ),
