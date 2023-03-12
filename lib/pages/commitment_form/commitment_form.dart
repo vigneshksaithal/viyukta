@@ -40,7 +40,11 @@ class CommitmentForm extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        ref.read(commitmentProvider.notifier).resetForm();
+
+                        Navigator.pop(context);
+                      },
                       child: const Text('Cancel'),
                     ),
                     const SizedBox(width: 16),

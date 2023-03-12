@@ -1,7 +1,6 @@
 import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_sms/flutter_sms.dart';
 
 import '../protos/commitment.pb.dart';
 
@@ -103,6 +102,17 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
   }
 
   Future<void> descryptText() async {}
+
+  void resetForm() {
+    state = Commitment(
+      descriptionController: TextEditingController(),
+      amountController: TextEditingController(),
+      commitmentDate: DateTime.now(),
+      prevCommitmentRequestNumber: 0,
+      commitmentRequestNumber: null,
+      isContinued: false,
+    );
+  }
 }
 
 final commitmentProvider =
