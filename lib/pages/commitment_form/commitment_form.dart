@@ -47,7 +47,14 @@ class CommitmentForm extends ConsumerWidget {
                       },
                       child: const Text('Cancel'),
                     ),
-                    const SizedBox(width: 16),
+                    const SizedBox(width: 16.0),
+                    TextButton(
+                      onPressed: () {
+                        ref.read(commitmentProvider.notifier).resetForm();
+                      },
+                      child: const Text('Reset'),
+                    ),
+                    const SizedBox(width: 16.0),
                     ElevatedButton(
                       onPressed: () async {
                         String message = ref.read(commitmentProvider).smsText;
@@ -59,7 +66,7 @@ class CommitmentForm extends ConsumerWidget {
                           sendDirect: true,
                         );
                       },
-                      child: const Text('Submit'),
+                      child: const Text('Save & Submit'),
                     ),
                   ],
                 )
