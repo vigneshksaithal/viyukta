@@ -2,9 +2,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class OrganizationDetails {
   String organizationName = 'Aden Govt. Primary & High School',
+      organizationType = 'School',
       organizationCode = 'SCH005',
-      organizationHead = 'Mr. ABC',
-      organizationType = 'School';
+      organizationOfficer = 'Mr. ABCDE FGHIJK';
 }
 
 class OrganizationDetailsNotifier extends StateNotifier<OrganizationDetails> {

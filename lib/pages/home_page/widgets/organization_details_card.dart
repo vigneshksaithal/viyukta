@@ -21,12 +21,13 @@ class OrganizationDetailsCard extends ConsumerWidget {
               'Organization Details',
               style: textTheme().titleMedium,
             ),
-            const SizedBox(height: 40.0),
+            const SizedBox(height: 48.0),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Department Name:',
+                  'Department Name',
                   style: textTheme().labelMedium,
                 ),
                 const SizedBox(width: 16.0),
@@ -41,9 +42,10 @@ class OrganizationDetailsCard extends ConsumerWidget {
             ),
             const Divider(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Department Type:',
+                  'Department Type',
                   style: textTheme().labelMedium,
                 ),
                 const SizedBox(width: 16.0),
@@ -55,9 +57,10 @@ class OrganizationDetailsCard extends ConsumerWidget {
             ),
             const Divider(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Department Code:',
+                  'Department Code',
                   style: textTheme().labelMedium,
                 ),
                 const SizedBox(width: 16.0),
@@ -69,16 +72,17 @@ class OrganizationDetailsCard extends ConsumerWidget {
             ),
             const Divider(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Authorizing Officer:',
+                  'Authorizing Officer',
                   style: textTheme().labelMedium,
                 ),
                 const SizedBox(width: 16.0),
                 Expanded(
                   child: Text(
-                    ref.read(organizationDetailsProvider).organizationHead,
+                    ref.read(organizationDetailsProvider).organizationOfficer,
                     style: textTheme().bodyMedium,
                   ),
                 ),
