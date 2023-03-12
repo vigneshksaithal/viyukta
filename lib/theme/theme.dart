@@ -11,6 +11,18 @@ ThemeData themeData(BuildContext context) {
     textTheme: textTheme(),
     cardTheme: cardTheme(),
     inputDecorationTheme: inputDecorationTheme(),
+    dividerTheme: dividerThemeData(),
+  );
+}
+
+DividerThemeData dividerThemeData() {
+  return DividerThemeData(
+    color: Colors.grey[300],
+    thickness: 1.0,
+    space: 36.0,
+
+    // indent: 10.0,
+    // endIndent: 10.0,
   );
 }
 
@@ -103,8 +115,8 @@ TextButtonThemeData textButtonTheme() {
   return TextButtonThemeData(
     style: TextButton.styleFrom(
       padding: const EdgeInsets.symmetric(
-        horizontal: 24,
-        vertical: 12,
+        horizontal: 16.0,
+        vertical: 12.0,
       ),
       textStyle: const TextStyle(
         fontSize: 16,
@@ -117,14 +129,17 @@ TextButtonThemeData textButtonTheme() {
 ElevatedButtonThemeData elevatedButtonTheme(context) {
   return ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5.0),
-      ),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+        Radius.circular(50),
+      )),
       padding: const EdgeInsets.symmetric(
-        horizontal: 24.0,
-        vertical: 14.0,
+        horizontal: 18.0,
+        vertical: 10.0,
       ),
       backgroundColor: Theme.of(context).primaryColor,
+      shadowColor: Colors.grey[100],
+      elevation: 0.5,
       textStyle: const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
@@ -135,18 +150,24 @@ ElevatedButtonThemeData elevatedButtonTheme(context) {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    backgroundColor: Colors.blue[400],
-    foregroundColor: Colors.white,
+    backgroundColor: Colors.grey[100],
+    // foregroundColor: Colors.white,
+    // toolbarTextStyle: const TextStyle(
+    //   fontSize: 28.0,
+    //   fontWeight: FontWeight.w800,
+    //   color: Colors.black,
+    // ),
     iconTheme: const IconThemeData(
       color: Colors.black,
     ),
     titleTextStyle: const TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.w400,
+      fontSize: 28.0,
+      fontWeight: FontWeight.w800,
       color: Colors.black,
     ),
     elevation: 0,
-    scrolledUnderElevation: 2,
+    scrolledUnderElevation: 0.5,
+    shadowColor: Colors.grey[100],
     titleSpacing: 16.0,
     surfaceTintColor: Colors.amber,
   );

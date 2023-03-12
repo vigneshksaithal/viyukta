@@ -9,9 +9,6 @@ class OrganizationDetailsCard extends ConsumerWidget {
     super.key,
   });
 
-  final String organizationName = 'Yemen School';
-  final String organizationCode = 'YMN-SC-001';
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Card(
@@ -24,45 +21,66 @@ class OrganizationDetailsCard extends ConsumerWidget {
               'Organization Details',
               style: textTheme().titleMedium,
             ),
-            const SizedBox(height: 32.0),
+            const SizedBox(height: 40.0),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Department Name:',
+                  style: textTheme().labelMedium,
+                ),
+                const SizedBox(width: 16.0),
+                Expanded(
+                  child: Text(
+                    ref.read(organizationDetailsProvider).organizationName,
+                    style: textTheme().bodyMedium,
+                    overflow: TextOverflow.clip,
+                  ),
+                ),
+              ],
+            ),
+            const Divider(),
             Row(
               children: [
                 Text(
-                  'Name:',
+                  'Department Type:',
                   style: textTheme().labelMedium,
                 ),
-                const SizedBox(width: 8.0),
+                const SizedBox(width: 16.0),
                 Text(
-                  ref.read(organizationDetailsProvider).organizationName,
+                  ref.read(organizationDetailsProvider).organizationType,
                   style: textTheme().bodyMedium,
                 ),
               ],
             ),
-            const SizedBox(height: 24.0),
+            const Divider(),
             Row(
               children: [
                 Text(
-                  'Code:',
+                  'Department Code:',
                   style: textTheme().labelMedium,
                 ),
-                const SizedBox(width: 8.0),
+                const SizedBox(width: 16.0),
                 Text(
                   ref.read(organizationDetailsProvider).organizationCode,
                   style: textTheme().bodyMedium,
                 ),
               ],
             ),
-            const SizedBox(height: 24.0),
+            const Divider(),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Head:',
+                  'Authorizing Officer:',
                   style: textTheme().labelMedium,
                 ),
-                const SizedBox(width: 8.0),
-                Text(
-                  ref.read(organizationDetailsProvider).organizationHead,
-                  style: textTheme().bodyMedium,
+                const SizedBox(width: 16.0),
+                Expanded(
+                  child: Text(
+                    ref.read(organizationDetailsProvider).organizationHead,
+                    style: textTheme().bodyMedium,
+                  ),
                 ),
               ],
             ),
