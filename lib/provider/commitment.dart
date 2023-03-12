@@ -8,11 +8,12 @@ class Commitment {
   TextEditingController descriptionController = TextEditingController(),
       amountController = TextEditingController();
 
-  DateTime commitmentDate = DateTime.now();
+  DateTime? commitmentDate = DateTime.now();
   int prevCommitmentRequestNumber = 0;
   String? commitmentRequestNumber;
   bool isContinued = false;
   String smsText = '';
+  DateTime? paymentDate;
 
   Commitment({
     required this.descriptionController,

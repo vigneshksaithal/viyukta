@@ -46,15 +46,27 @@ class CommitmentDetailsCard extends ConsumerWidget {
             ),
             const Divider(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'Payment Date',
                   style: textTheme().labelMedium,
                 ),
                 const SizedBox(width: 16.0),
-                OutlinedButton(
-                  onPressed: () {},
-                  child: const Text('Choose date'),
+                TextButton(
+                  onPressed: () async {
+                    DateTime? date = await pickDate(context);
+
+                    if (date == null) return;
+
+                    DateTime? paymentDate =
+                        ref.watch(commitmentProvider).paymentDate;
+
+                    ref.watch(commitmentProvider).paymentDate = date;
+
+                    print('DATE ==== $paymentDate');
+                  },
+                  child: const Text('Choose Date'),
                 ),
               ],
             )
@@ -63,6 +75,17 @@ class CommitmentDetailsCard extends ConsumerWidget {
       ),
     );
   }
+
+  Future<DateTime?> pickDate(context) => showDatePicker(
+        context: context,
+        initialDate: DateTime(
+          DateTime.now().year,
+          DateTime.now().month,
+          DateTime.now().day,
+        ),
+        firstDate: DateTime(1900),
+        lastDate: DateTime(3000),
+      );
 
   TextFormField descriptionTextField(WidgetRef ref) {
     return TextFormField(
