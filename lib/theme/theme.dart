@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 ThemeData themeData(BuildContext context) {
   return ThemeData(
-    scaffoldBackgroundColor: Colors.grey[200],
+    scaffoldBackgroundColor: Colors.grey[100],
     appBarTheme: appBarTheme(),
     // primaryColor: Colors.green[500],
     elevatedButtonTheme: elevatedButtonTheme(context),
@@ -54,12 +54,13 @@ CardTheme cardTheme() {
   return CardTheme(
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(
-        Radius.circular(8.0),
+        Radius.circular(12.0),
       ),
     ),
-    elevation: 1,
+    elevation: 0.5,
+    shadowColor: Colors.grey[200],
     margin: const EdgeInsets.all(0),
-    color: Colors.grey[100],
+    color: Colors.white,
   );
 }
 
