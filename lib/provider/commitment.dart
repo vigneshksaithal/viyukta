@@ -23,6 +23,7 @@ class Commitment {
     required this.commitmentRequestNumber,
     required this.isContinued,
     this.smsText = '',
+    this.paymentDate,
   });
 
   Commitment copyWith({
@@ -34,6 +35,7 @@ class Commitment {
     String? commitmentRequestNumber,
     bool? isContinued,
     String? smsText,
+    DateTime? paymentDate,
   }) {
     return Commitment(
       descriptionController:
@@ -46,6 +48,7 @@ class Commitment {
           commitmentRequestNumber ?? this.commitmentRequestNumber,
       isContinued: isContinued ?? this.isContinued,
       smsText: smsText ?? this.smsText,
+      paymentDate: paymentDate ?? this.paymentDate,
     );
   }
 }
@@ -59,6 +62,7 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
           prevCommitmentRequestNumber: 0,
           commitmentRequestNumber: null,
           isContinued: false,
+          paymentDate: null,
         )) {
     saveData();
     serializeData();
@@ -112,6 +116,7 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
       prevCommitmentRequestNumber: 0,
       commitmentRequestNumber: null,
       isContinued: false,
+      paymentDate: null,
     );
   }
 }
