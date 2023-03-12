@@ -148,17 +148,12 @@ ElevatedButtonThemeData elevatedButtonTheme(context) {
 AppBarTheme appBarTheme() {
   return AppBarTheme(
     backgroundColor: Colors.grey[100],
-    // foregroundColor: Colors.white,
-    // toolbarTextStyle: const TextStyle(
-    //   fontSize: 28.0,
-    //   fontWeight: FontWeight.w800,
-    //   color: Colors.black,
-    // ),
     iconTheme: const IconThemeData(
       color: Colors.black,
+      weight: 800,
     ),
     titleTextStyle: const TextStyle(
-      fontSize: 28.0,
+      fontSize: 24.0,
       fontWeight: FontWeight.w800,
       color: Colors.black,
     ),
@@ -166,6 +161,5 @@ AppBarTheme appBarTheme() {
     scrolledUnderElevation: 0.5,
     shadowColor: Colors.grey[100],
     titleSpacing: 16.0,
-    surfaceTintColor: Colors.amber,
   );
 }
