@@ -19,7 +19,7 @@ class CommitmentForm extends ConsumerWidget {
         child: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.symmetric(
-              vertical: 16.0,
+              vertical: 24.0,
               horizontal: 16.0,
             ),
             // Delete this comment
