@@ -18,6 +18,7 @@ class CommitmentProto extends $pb.GeneratedMessage {
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isContinued', protoName: 'isContinued')
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isApproved', protoName: 'isApproved')
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paymentDate', protoName: 'paymentDate')
     ..hasRequiredFields = false
   ;
 
@@ -30,6 +31,7 @@ class CommitmentProto extends $pb.GeneratedMessage {
     $core.bool? isContinued,
     $core.bool? isApproved,
     $core.String? description,
+    $core.String? paymentDate,
   }) {
     final _result = create();
     if (requestNumber != null) {
@@ -52,6 +54,9 @@ class CommitmentProto extends $pb.GeneratedMessage {
     }
     if (description != null) {
       _result.description = description;
+    }
+    if (paymentDate != null) {
+      _result.paymentDate = paymentDate;
     }
     return _result;
   }
@@ -138,5 +143,14 @@ class CommitmentProto extends $pb.GeneratedMessage {
   $core.bool hasDescription() => $_has(6);
   @$pb.TagNumber(7)
   void clearDescription() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get paymentDate => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set paymentDate($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasPaymentDate() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPaymentDate() => clearField(8);
 }
 

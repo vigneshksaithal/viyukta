@@ -86,6 +86,7 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
       ..amount = state.amountController.text
       ..description = state.descriptionController.text
       ..isContinued = state.isContinued
+      ..paymentDate = state.paymentDate.toString()
       ..isApproved = false;
 
     encryptText(commitment.writeToBuffer().toString());

@@ -8,4 +8,5 @@ message CommitmentProto {
     bool isContinued = 5;
     bool isApproved = 6;
     string description = 7;
+    string paymentDate = 8;
 }

@@ -19,8 +19,9 @@ const CommitmentProto$json = const {
     const {'1': 'isContinued', '3': 5, '4': 1, '5': 8, '10': 'isContinued'},
     const {'1': 'isApproved', '3': 6, '4': 1, '5': 8, '10': 'isApproved'},
     const {'1': 'description', '3': 7, '4': 1, '5': 9, '10': 'description'},
+    const {'1': 'paymentDate', '3': 8, '4': 1, '5': 9, '10': 'paymentDate'},
   ],
 };
 
 /// Descriptor for `CommitmentProto`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List commitmentProtoDescriptor = $convert.base64Decode('Cg9Db21taXRtZW50UHJvdG8SJAoNcmVxdWVzdE51bWJlchgBIAEoCVINcmVxdWVzdE51bWJlchISCgRkYXRlGAIgASgJUgRkYXRlEhIKBHR5cGUYAyABKAlSBHR5cGUSFgoGYW1vdW50GAQgASgJUgZhbW91bnQSIAoLaXNDb250aW51ZWQYBSABKAhSC2lzQ29udGludWVkEh4KCmlzQXBwcm92ZWQYBiABKAhSCmlzQXBwcm92ZWQSIAoLZGVzY3JpcHRpb24YByABKAlSC2Rlc2NyaXB0aW9u');
+final $typed_data.Uint8List commitmentProtoDescriptor = $convert.base64Decode('Cg9Db21taXRtZW50UHJvdG8SJAoNcmVxdWVzdE51bWJlchgBIAEoCVINcmVxdWVzdE51bWJlchISCgRkYXRlGAIgASgJUgRkYXRlEhIKBHR5cGUYAyABKAlSBHR5cGUSFgoGYW1vdW50GAQgASgJUgZhbW91bnQSIAoLaXNDb250aW51ZWQYBSABKAhSC2lzQ29udGludWVkEh4KCmlzQXBwcm92ZWQYBiABKAhSCmlzQXBwcm92ZWQSIAoLZGVzY3JpcHRpb24YByABKAlSC2Rlc2NyaXB0aW9uEiAKC3BheW1lbnREYXRlGAggASgJUgtwYXltZW50RGF0ZQ==');
