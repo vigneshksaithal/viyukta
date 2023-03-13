@@ -37,7 +37,6 @@ class GeneralDetailsCard extends ConsumerWidget {
                     'Submission Date',
                     style: textTheme().labelMedium,
                   ),
-                  const SizedBox(width: 8.0),
                   Text(
                     '${commitmentDate?.day}/${commitmentDate?.month}/${commitmentDate?.year}',
                   ),

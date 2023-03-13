@@ -53,7 +53,6 @@ class CommitmentDetailsCard extends ConsumerWidget {
                   'Payment Date',
                   style: textTheme().labelMedium,
                 ),
-                const SizedBox(width: 16.0),
                 TextButton(
                   onPressed: () async {
                     DateTime? date = await pickDate(context);
@@ -70,6 +69,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
                       ? const Text('Pick a date')
                       : Text(
                           '${paymentDate.day}/${paymentDate.month}/${paymentDate.year}',
+                          style: textTheme().bodyMedium,
                         ),
                 ),
               ],
