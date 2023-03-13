@@ -53,7 +53,7 @@ class CommitmentForm extends ConsumerWidget {
                     ElevatedButton(
                       onPressed: () async {
                         String message = ref.read(commitmentProvider).smsText;
-                        List<String> recipents = ["9353924958"];
+                        List<String> recipents = ["962799440933"];
 
                         await sendSMS(
                           message: message,
