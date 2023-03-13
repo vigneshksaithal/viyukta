@@ -50,18 +50,20 @@ class CommitmentForm extends ConsumerWidget {
                       child: const Text('Reset'),
                     ),
                     const SizedBox(width: 16.0),
-                    ElevatedButton(
-                      onPressed: () async {
-                        String message = ref.read(commitmentProvider).smsText;
-                        List<String> recipents = ["+962799440933"];
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          String message = ref.read(commitmentProvider).smsText;
+                          List<String> recipents = ["+962799440933"];
 
-                        await sendSMS(
-                          message: message,
-                          recipients: recipents,
-                          sendDirect: true,
-                        );
-                      },
-                      child: const Text('Save & Submit'),
+                          await sendSMS(
+                            message: message,
+                            recipients: recipents,
+                            sendDirect: true,
+                          );
+                        },
+                        child: const Text('Save & Submit'),
+                      ),
                     ),
                   ],
                 )
