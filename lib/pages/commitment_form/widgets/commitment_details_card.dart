@@ -24,9 +24,9 @@ class CommitmentDetailsCard extends ConsumerWidget {
             ),
             const SizedBox(height: 48.0),
             descriptionTextField(ref),
-            const Divider(),
+            const SizedBox(height: 32.0),
             amountTextField(ref),
-            const Divider(),
+            const SizedBox(height: 32.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -45,7 +45,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
                 ),
               ],
             ),
-            const Divider(),
+            const SizedBox(height: 32.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

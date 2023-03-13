@@ -45,6 +45,19 @@ InputDecorationTheme inputDecorationTheme() {
     ),
     filled: true,
     fillColor: Colors.grey[100],
+    border: InputBorder.none,
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(16.0),
+      borderSide: BorderSide(
+        color: Colors.grey[300]!,
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(16.0),
+      borderSide: BorderSide(
+        color: Colors.grey[300]!,
+      ),
+    ),
   );
 }
 

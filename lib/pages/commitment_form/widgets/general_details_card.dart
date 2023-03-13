@@ -45,33 +45,18 @@ class GeneralDetailsCard extends ConsumerWidget {
               const Divider(),
               Row(
                 children: [
+                  Expanded(
+                    child: Text(
+                      'Commitment Request Number',
+                      style: textTheme().labelMedium,
+                    ),
+                  ),
                   Text(
-                    'Commitment Request Number (CRN)',
-                    style: textTheme().labelMedium,
+                    '$commitmentRequestNumber',
+                    style: textTheme().bodyMedium,
                   ),
                 ],
               ),
-              const SizedBox(height: 8.0),
-              Text(
-                '$commitmentRequestNumber',
-              ),
-              // const Divider(),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     Text(
-              //       'Request Type',
-              //       style: textTheme().labelMedium,
-              //     ),
-              //     const SizedBox(width: 16.0),
-              //     OutlinedButton(
-              //       onPressed: () {
-              //         ref.read(commitmentProvider.notifier).serializeData();
-              //       },
-              //       child: const Text('Choose type'),
-              //     ),
-              //   ],
-              // ),
             ],
           ),
         ),
