@@ -11,6 +11,12 @@ class Commitment {
   DateTime? commitmentDate = DateTime.now();
   int prevCommitmentRequestNumber = 0;
   String? commitmentRequestNumber;
+
+  String? chapterCode;
+  String? partCode;
+  String? typeCode;
+  String? itemCode;
+
   bool isContinued = false;
   String smsText = '';
   DateTime? paymentDate;
@@ -21,6 +27,10 @@ class Commitment {
     required this.commitmentDate,
     required this.prevCommitmentRequestNumber,
     required this.commitmentRequestNumber,
+    required this.chapterCode,
+    required this.partCode,
+    required this.typeCode,
+    required this.itemCode,
     required this.isContinued,
     this.smsText = '',
     this.paymentDate,
@@ -33,6 +43,10 @@ class Commitment {
     DateTime? commitmentDate,
     int? prevCommitmentRequestNumber,
     String? commitmentRequestNumber,
+    String? chapterCode,
+    String? partCode,
+    String? typeCode,
+    String? itemCode,
     bool? isContinued,
     String? smsText,
     DateTime? paymentDate,
@@ -46,6 +60,10 @@ class Commitment {
           prevCommitmentRequestNumber ?? this.prevCommitmentRequestNumber,
       commitmentRequestNumber:
           commitmentRequestNumber ?? this.commitmentRequestNumber,
+      chapterCode: chapterCode ?? this.chapterCode,
+      partCode: partCode ?? this.partCode,
+      typeCode: typeCode ?? this.typeCode,
+      itemCode: itemCode ?? this.itemCode,
       isContinued: isContinued ?? this.isContinued,
       smsText: smsText ?? this.smsText,
       paymentDate: paymentDate ?? this.paymentDate,
@@ -61,6 +79,10 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
           commitmentDate: DateTime.now(),
           prevCommitmentRequestNumber: 0,
           commitmentRequestNumber: null,
+          chapterCode: null,
+          partCode: null,
+          typeCode: null,
+          itemCode: null,
           isContinued: false,
           paymentDate: null,
         )) {
@@ -77,6 +99,14 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
 
   void toggleContinued() {
     state = state.copyWith(isContinued: !state.isContinued);
+  }
+
+  void setChapterCode(String chapterCode) {
+    state = state.copyWith(chapterCode: chapterCode);
+  }
+
+  void updatePaymentDate(DateTime paymentDate) {
+    state = state.copyWith(paymentDate: paymentDate);
   }
 
   Future<void> serializeData() async {
@@ -116,6 +146,10 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
       commitmentDate: DateTime.now(),
       prevCommitmentRequestNumber: 0,
       commitmentRequestNumber: null,
+      chapterCode: null,
+      partCode: null,
+      typeCode: null,
+      itemCode: null,
       isContinued: false,
       paymentDate: null,
     );

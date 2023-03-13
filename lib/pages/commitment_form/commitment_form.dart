@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import 'package:viyukta/pages/commitment_form/widgets/coding_block_card.dart';
 
 import '../../provider/commitment.dart';
 import 'widgets/commitment_details_card.dart';
@@ -25,6 +26,8 @@ class CommitmentForm extends ConsumerWidget {
             child: Column(
               children: <Widget>[
                 GeneralDetailsCard(),
+                const SizedBox(height: 24.0),
+                const CodingBlockCard(),
                 const SizedBox(height: 24.0),
                 const CommitmentDetailsCard(),
                 const SizedBox(height: 24.0),
