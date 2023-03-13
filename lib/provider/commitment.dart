@@ -105,7 +105,7 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
     state = state.copyWith(chapterCode: chapterCode);
   }
 
-  void updatePaymentDate(DateTime paymentDate) {
+  void setPaymentDate(DateTime paymentDate) {
     state = state.copyWith(paymentDate: paymentDate);
   }
 

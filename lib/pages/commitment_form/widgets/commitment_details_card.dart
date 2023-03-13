@@ -10,6 +10,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     bool isContinued = ref.watch(commitmentProvider).isContinued;
+    DateTime? paymentDate = ref.watch(commitmentProvider).paymentDate;
 
     return Card(
       child: Padding(
@@ -59,14 +60,17 @@ class CommitmentDetailsCard extends ConsumerWidget {
 
                     if (date == null) return;
 
-                    DateTime? paymentDate =
-                        ref.watch(commitmentProvider).paymentDate;
+                    paymentDate = date;
 
-                    ref.watch(commitmentProvider).paymentDate = date;
+                    ref.read(commitmentProvider.notifier).setPaymentDate(date);
 
                     print('DATE ==== $paymentDate');
                   },
-                  child: const Text('Choose Date'),
+                  child: paymentDate == null
+                      ? const Text('Pick a date')
+                      : Text(
+                          '${paymentDate.day}/${paymentDate.month}/${paymentDate.year}',
+                        ),
                 ),
               ],
             )
