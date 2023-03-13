@@ -26,9 +26,9 @@ class CommitmentForm extends ConsumerWidget {
             child: Column(
               children: <Widget>[
                 GeneralDetailsCard(),
-                const SizedBox(height: 24.0),
+                const SizedBox(height: 32.0),
                 const CodingBlockCard(),
-                const SizedBox(height: 24.0),
+                const SizedBox(height: 32.0),
                 const CommitmentDetailsCard(),
                 const SizedBox(height: 32.0),
                 Row(
