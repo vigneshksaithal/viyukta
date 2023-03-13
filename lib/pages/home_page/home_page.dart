@@ -30,33 +30,39 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const OrganizationDetailsCard(),
-                const SizedBox(height: 32.0),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                        type: PageTransitionType.rightToLeftWithFade,
-                        child: const CommitmentForm(),
-                      ),
-                    );
-                  },
-                  child: const Text('+ Create Commitment'),
+                const SizedBox(height: 40.0),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeftWithFade,
+                          child: const CommitmentForm(),
+                        ),
+                      );
+                    },
+                    child: const Text('Create New Commitment'),
+                  ),
                 ),
-                const SizedBox(height: 24.0),
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                        type: PageTransitionType.rightToLeftWithFade,
-                        child: UploadCommitment(),
-                      ),
-                    );
-                  },
-                  child: const Text('Upload Commitment (Excel)'),
+                const SizedBox(height: 16.0),
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeftWithFade,
+                          child: UploadCommitment(),
+                        ),
+                      );
+                    },
+                    child: const Text('Upload Commitment (CSV)'),
+                  ),
                 ),
-                const SizedBox(height: 24.0),
+                const SizedBox(height: 16.0),
                 TextButton(
                   onPressed: () {
                     Navigator.push(

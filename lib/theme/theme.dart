@@ -33,24 +33,6 @@ DividerThemeData dividerThemeData() {
   );
 }
 
-OutlinedButtonThemeData outlineButtonThemeData() {
-  return OutlinedButtonThemeData(
-    style: OutlinedButton.styleFrom(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5),
-      ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 24.0,
-        vertical: 16.0,
-      ),
-      textStyle: const TextStyle(
-        fontSize: 16.0,
-        fontWeight: FontWeight.w500,
-      ),
-    ),
-  );
-}
-
 InputDecorationTheme inputDecorationTheme() {
   return InputDecorationTheme(
     labelStyle: const TextStyle(
@@ -124,7 +106,29 @@ TextButtonThemeData textButtonTheme() {
       ),
       textStyle: const TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
+  );
+}
+
+OutlinedButtonThemeData outlineButtonThemeData() {
+  return OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+      backgroundColor: Colors.grey[200],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+        side: BorderSide(
+          color: Colors.grey[500]!,
+        ),
+      ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 24.0,
+        vertical: 12.0,
+      ),
+      textStyle: const TextStyle(
+        fontSize: 16.0,
+        fontWeight: FontWeight.w600,
       ),
     ),
   );
@@ -135,18 +139,18 @@ ElevatedButtonThemeData elevatedButtonTheme(context) {
     style: ElevatedButton.styleFrom(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-        Radius.circular(50),
+        Radius.circular(16.0),
       )),
       padding: const EdgeInsets.symmetric(
         horizontal: 16.0,
-        vertical: 10.0,
+        vertical: 12.0,
       ),
       backgroundColor: Theme.of(context).primaryColor,
       shadowColor: Colors.grey[100],
       elevation: 0.5,
       textStyle: const TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+        fontWeight: FontWeight.w600,
       ),
     ),
   );
