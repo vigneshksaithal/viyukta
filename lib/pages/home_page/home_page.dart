@@ -13,8 +13,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Viyukta'),
-        automaticallyImplyLeading: true,
+        title: Image.asset(
+          height: 96.0,
+          'assets/viyukta-logo.png',
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
