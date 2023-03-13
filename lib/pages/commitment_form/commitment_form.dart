@@ -22,19 +22,11 @@ class CommitmentForm extends ConsumerWidget {
               vertical: 24.0,
               horizontal: 16.0,
             ),
-            // Delete this comment
             child: Column(
               children: <Widget>[
-                SizedBox(
-                  width: double.infinity,
-                  // height: ,
-                  child: GeneralDetailsCard(),
-                ),
+                GeneralDetailsCard(),
                 const SizedBox(height: 24.0),
-                const SizedBox(
-                  width: double.infinity,
-                  child: CommitmentDetailsCard(),
-                ),
+                const CommitmentDetailsCard(),
                 const SizedBox(height: 24.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
