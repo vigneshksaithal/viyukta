@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'colors.dart';
+
 ThemeData themeData(BuildContext context) {
   return ThemeData(
     scaffoldBackgroundColor: Colors.grey[100],
+
     appBarTheme: appBarTheme(),
     // primaryColor: Colors.green[500],
     elevatedButtonTheme: elevatedButtonTheme(context),
@@ -12,6 +15,13 @@ ThemeData themeData(BuildContext context) {
     cardTheme: cardTheme(),
     inputDecorationTheme: inputDecorationTheme(),
     dividerTheme: dividerThemeData(),
+    dropdownMenuTheme: DropdownMenuThemeData(
+      textStyle: TextStyle(
+        fontSize: 16.0,
+        fontWeight: FontWeight.w500,
+        color: Colors.grey[800],
+      ),
+    ),
   );
 }
 
@@ -42,20 +52,17 @@ OutlinedButtonThemeData outlineButtonThemeData() {
 }
 
 InputDecorationTheme inputDecorationTheme() {
-  return const InputDecorationTheme(
-    labelStyle: TextStyle(
+  return InputDecorationTheme(
+    labelStyle: const TextStyle(
       fontSize: 18.0,
       fontWeight: FontWeight.normal,
     ),
-    contentPadding: EdgeInsets.symmetric(
+    contentPadding: const EdgeInsets.symmetric(
       vertical: 16.0,
       horizontal: 16.0,
     ),
-    border: OutlineInputBorder(
-      borderSide: BorderSide(
-        color: Colors.grey,
-      ),
-    ),
+    filled: true,
+    fillColor: Colors.grey[100],
   );
 }
 
@@ -131,7 +138,7 @@ ElevatedButtonThemeData elevatedButtonTheme(context) {
         Radius.circular(50),
       )),
       padding: const EdgeInsets.symmetric(
-        horizontal: 18.0,
+        horizontal: 16.0,
         vertical: 10.0,
       ),
       backgroundColor: Theme.of(context).primaryColor,
@@ -147,7 +154,7 @@ ElevatedButtonThemeData elevatedButtonTheme(context) {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    backgroundColor: Colors.grey[100],
+    backgroundColor: kBackgroundColor,
     iconTheme: const IconThemeData(
       color: Colors.black,
       weight: 800,

@@ -13,9 +13,9 @@ class GeneralDetailsCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final commtmentProvider = ref.watch(commitmentProvider);
-    final commitmentDate = commtmentProvider.commitmentDate;
-    String? commitmentRequestNumber = commtmentProvider.commitmentRequestNumber;
+    final commitmentDate = ref.watch(commitmentProvider).commitmentDate;
+    int commitmentRequestNumber =
+        ref.watch(commitmentProvider).commitmentRequestNumber;
 
     return Card(
       child: Form(
@@ -55,23 +55,23 @@ class GeneralDetailsCard extends ConsumerWidget {
               Text(
                 '$commitmentRequestNumber',
               ),
-              const Divider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Request Type',
-                    style: textTheme().labelMedium,
-                  ),
-                  const SizedBox(width: 16.0),
-                  OutlinedButton(
-                    onPressed: () {
-                      ref.read(commitmentProvider.notifier).serializeData();
-                    },
-                    child: const Text('Choose type'),
-                  ),
-                ],
-              ),
+              // const Divider(),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Text(
+              //       'Request Type',
+              //       style: textTheme().labelMedium,
+              //     ),
+              //     const SizedBox(width: 16.0),
+              //     OutlinedButton(
+              //       onPressed: () {
+              //         ref.read(commitmentProvider.notifier).serializeData();
+              //       },
+              //       child: const Text('Choose type'),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

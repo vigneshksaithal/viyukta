@@ -24,30 +24,28 @@ class CommitmentListPage extends ConsumerWidget {
             itemCount: commitmentList.length,
             itemBuilder: (context, index) {
               final commitment = commitmentList[index];
-              return Container(
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      width: 0.5,
-                      color: Colors.grey,
-                    ),
-                  ),
+              return Card(
+                margin: const EdgeInsets.symmetric(
+                  vertical: 8.0,
                 ),
                 child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(
-                    vertical: 16,
-                    horizontal: 8,
-                  ),
+                  contentPadding: const EdgeInsets.all(24.0),
                   onTap: () {},
                   title: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '${commitment['description']}',
-                        style: textTheme().bodySmall?.copyWith(
-                            fontSize: 18.0,
-                            color: Colors.grey[800],
-                            fontWeight: FontWeight.w500),
+                      SizedBox(
+                        child: Expanded(
+                          child: Text(
+                            '${commitment['description']}',
+                            style: textTheme().bodySmall?.copyWith(
+                                  fontSize: 18.0,
+                                  color: Colors.grey[800],
+                                  fontWeight: FontWeight.w500,
+                                ),
+                            overflow: TextOverflow.clip,
+                          ),
+                        ),
                       ),
                       const SizedBox(height: 24),
                       Text(
@@ -71,13 +69,13 @@ class CommitmentListPage extends ConsumerWidget {
                                   : Colors.red[600],
                             ),
                       ),
-                      const SizedBox(height: 24),
-                      Text(
-                        '${commitment['amount']}',
-                        style: textTheme().bodySmall?.copyWith(
-                            color: Colors.grey[600],
-                            fontWeight: FontWeight.w500),
-                      ),
+                      // const SizedBox(height: 24),
+                      // Text(
+                      //   '${commitment['amount']}',
+                      //   style: textTheme().bodySmall?.copyWith(
+                      //       color: Colors.grey[600],
+                      //       fontWeight: FontWeight.w500),
+                      // ),
                     ],
                   ),
                 ),

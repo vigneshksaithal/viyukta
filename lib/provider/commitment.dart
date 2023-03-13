@@ -9,8 +9,8 @@ class Commitment {
       amountController = TextEditingController();
 
   DateTime? commitmentDate = DateTime.now();
-  int prevCommitmentRequestNumber = 0;
-  String? commitmentRequestNumber;
+  int prevCommitmentRequestNumber = 10000;
+  int commitmentRequestNumber = 0;
 
   String? chapterCode;
   String? partCode;
@@ -41,8 +41,8 @@ class Commitment {
     TextEditingController? descriptionController,
     TextEditingController? amountController,
     DateTime? commitmentDate,
-    int? prevCommitmentRequestNumber,
-    String? commitmentRequestNumber,
+    int prevCommitmentRequestNumber = 10000,
+    int commitmentRequestNumber = 0,
     String? chapterCode,
     String? partCode,
     String? typeCode,
@@ -56,10 +56,8 @@ class Commitment {
           descriptionController ?? this.descriptionController,
       amountController: amountController ?? this.amountController,
       commitmentDate: commitmentDate ?? this.commitmentDate,
-      prevCommitmentRequestNumber:
-          prevCommitmentRequestNumber ?? this.prevCommitmentRequestNumber,
-      commitmentRequestNumber:
-          commitmentRequestNumber ?? this.commitmentRequestNumber,
+      prevCommitmentRequestNumber: prevCommitmentRequestNumber,
+      commitmentRequestNumber: commitmentRequestNumber,
       chapterCode: chapterCode ?? this.chapterCode,
       partCode: partCode ?? this.partCode,
       typeCode: typeCode ?? this.typeCode,
@@ -77,8 +75,8 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
           descriptionController: TextEditingController(),
           amountController: TextEditingController(),
           commitmentDate: DateTime.now(),
-          prevCommitmentRequestNumber: 0,
-          commitmentRequestNumber: null,
+          prevCommitmentRequestNumber: 10000,
+          commitmentRequestNumber: 0,
           chapterCode: null,
           partCode: null,
           typeCode: null,
@@ -86,15 +84,15 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
           isContinued: false,
           paymentDate: null,
         )) {
-    saveData();
-    serializeData();
-    state.commitmentRequestNumber =
-        generateCommitmentRequestNumber('10', '005');
+    // generateCommitmentRequestNumber();
+    // saveData();
+    // serializeData();
   }
 
-  String generateCommitmentRequestNumber(
-      String stateCode, String departmentCode) {
-    return '$stateCode-$departmentCode-${DateTime.now()}';
+  void generateCommitmentRequestNumber() {
+    state = state.copyWith(
+      commitmentRequestNumber: (state.commitmentRequestNumber + 1),
+    );
   }
 
   void toggleContinued() {
@@ -144,8 +142,8 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
       descriptionController: TextEditingController(),
       amountController: TextEditingController(),
       commitmentDate: DateTime.now(),
-      prevCommitmentRequestNumber: 0,
-      commitmentRequestNumber: null,
+      prevCommitmentRequestNumber: state.prevCommitmentRequestNumber,
+      commitmentRequestNumber: 0,
       chapterCode: null,
       partCode: null,
       typeCode: null,
