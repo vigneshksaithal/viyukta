@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:encrypt/encrypt.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +20,7 @@ class Commitment {
   String smsText = '';
   DateTime? paymentDate;
 
-  Map<String, dynamic>? jsonSms;
+  Map? jsonSms;
 
   Commitment({
     required this.descriptionController,
@@ -54,7 +52,7 @@ class Commitment {
     bool? isContinued,
     String? smsText,
     DateTime? paymentDate,
-    Map<String, dynamic> jsonSms = const {},
+    Map jsonSms = const {},
   }) {
     return Commitment(
       descriptionController:
@@ -119,18 +117,14 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
   void convertDataToJson() {
     state = state.copyWith(
       jsonSms: {
-        "cCode": state.chapterCode,
-        "pCode": state.partCode,
-        "desc": state.descriptionController.text,
-        "amt": state.amountController.text,
-        "contd": state.isContinued,
-        "pDat": state.paymentDate,
+        'cCode': state.chapterCode,
+        'pCode': state.partCode,
+        'desc': state.descriptionController.text,
+        'amt': state.amountController.text,
+        'contd': state.isContinued,
+        'pDat': state.paymentDate,
       },
     );
-
-    jsonEncode(state.jsonSms);
-
-    print('JSON ENCODE DATA: ${state.jsonSms.toString()}');
   }
 
   Future<void> serializeData() async {
