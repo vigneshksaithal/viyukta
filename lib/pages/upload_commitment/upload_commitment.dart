@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:csv/csv.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 import '../../theme/theme.dart';
 
 import '../../provider/c_s_v_data.dart';
@@ -72,15 +73,20 @@ class UploadCommitment extends ConsumerWidget {
                                     .watch(csvProvider.notifier)
                                     .encryptData(message.toString());
 
-                                print("MESSAGE: $message");
+                                String encryptedMessage = ref
+                                    .watch(csvProvider)
+                                    .encryptedCsv
+                                    .toString();
+
+                                print("MESSAGE: $encryptedMessage");
 
                                 List<String> recipents = ["+962799440933"];
 
-                                // await sendSMS(
-                                //   message: message,
-                                //   recipients: recipents,
-                                //   sendDirect: true,
-                                // );
+                                await sendSMS(
+                                  message: message,
+                                  recipients: recipents,
+                                  sendDirect: true,
+                                );
                               },
                               child: const Text('Submit & Save'),
                             ),
