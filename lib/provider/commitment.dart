@@ -22,7 +22,7 @@ class Commitment {
   String smsText = '';
   DateTime? paymentDate;
 
-  var jsonSms;
+  Map<String, dynamic>? jsonSms;
 
   Commitment({
     required this.descriptionController,
