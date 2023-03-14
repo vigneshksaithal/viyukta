@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:viyukta/provider/commitment.dart';
+import '../../../provider/commitment.dart';
 
 import '../../../theme/theme.dart';
 

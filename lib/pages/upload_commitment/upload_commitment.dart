@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:csv/csv.dart';
+import 'package:lzstring/lzstring.dart';
 import 'package:viyukta/theme/theme.dart';
 
 import '../../provider/c_s_v_data.dart';
@@ -96,5 +97,37 @@ class UploadCommitment extends ConsumerWidget {
         .toList();
 
     ref.watch(csvProvider.notifier).getFile(fields);
+
+    String text =
+        'UN2zwADwq9ZbB/BkhE6znPRIT6YKc9J0f7VVQbI/OEgj9VVjbtOSpHwIKJ4XI5tt6atBqaA3zAh/ijvy1yvMvnAdGUVEKtYnJtjBcRcWLOFUdnpBRzAaHkYm9pz2wrIIDPrZ97Eo5TwmSdq8OITLTyqFLzawV/c0B4grVaEykwQjewtCiQquLFUvbuwF1y2zyCH7YH6/oQvfQtK8EUX8W4voAJTFNk/ROUn+bTQUZCZOvE0E1hHsZ0luXTWQybwM+Fi+ngcJRbkofaV4/Ay7PG7G/9MfRe+4e/pnF+M22EJqVAwRvWJpX7y35UbnEqwQlt27je8PCQJSG0B5KMiR4GUg2HnTTaCL8DyyfQDSIZ1vqipvD3NpLe0C5kfa3Q0okPMrNVoTA/c7g+DKWnC6b09sa1dLm/wRIrsj5LkphycKqTnjiWlOD5/jqfFRWeYZZVf4crRiiVeyvDya5zD5WaceCby1BqLYh1IAr57RsxibeR26roDpJkwJ29u/rohgiZHxuO6lycavOEIxeK6l5w==';
+
+    Future<String?> compressedString = LZString.compress(text);
+    // Future<String?> decompressedString = LZString.decompress(compressedString as String?);
+
+    String? compressedStringSync = LZString.compressSync('Some String');
+    // String? decompressedStringSync =
+    // LZString.decompressSync(compressedStringSync);
+
+    print('COMPRESSED STRING: === ${compressedStringSync!.length}');
+
+    String kData = ref.read(csvProvider).csvData.toString();
+
+    //Original Data
+    List<int> original = utf8.encode(text);
+
+    //Compress data
+    List<int> compressed = gzip.encode(original);
+
+    //Decompress
+    List<int> decompress = gzip.decode(compressed);
+
+    // ref.watch(csvProvider.notifier);
+
+    // print('Original ${original.length} bytes');
+    // print('Compressed ${compressed.length} | ${compressed.toList()} bytes');
+    // print('Decompressed ${decompress.length} bytes');
+
+    // String decoded = utf8.decode(decompress);
+    // assert(data == decoded);
   }
 }

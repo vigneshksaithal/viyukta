@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:viyukta/pages/commitment_form/widgets/coding_block_card.dart';
 
 import '../../provider/commitment.dart';
 import 'widgets/commitment_details_card.dart';
 import 'widgets/general_details_card.dart';
+import 'widgets/coding_block_card.dart';
 
 class CommitmentForm extends ConsumerWidget {
   const CommitmentForm({super.key});

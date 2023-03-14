@@ -102,7 +102,7 @@ class CommitmentDetailsCard extends ConsumerWidget {
         fontWeight: FontWeight.normal,
       ),
       controller: ref.watch(commitmentProvider).descriptionController,
-      maxLength: 80,
+      maxLength: 77,
       minLines: 3,
       maxLines: 3,
     );

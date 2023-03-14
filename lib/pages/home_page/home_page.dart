@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:viyukta/pages/commitment_form/commitment_form.dart';
-import 'package:viyukta/pages/commitment_list/commitment_list.dart';
-import 'package:viyukta/pages/home_page/widgets/organization_details_card.dart';
+import 'widgets/organization_details_card.dart';
+import '../commitment_form/commitment_form.dart';
+import '../commitment_list/commitment_list.dart';
 
 import '../upload_commitment/upload_commitment.dart';
 
