@@ -68,6 +68,10 @@ class UploadCommitment extends ConsumerWidget {
                               onPressed: () async {
                                 String? message =
                                     ref.read(csvProvider).encryptedCsv;
+
+                                ref
+                                    .watch(csvProvider.notifier)
+                                    .encryptData(message ?? '');
                                 List<String> recipents = ["+962799440933"];
 
                                 await sendSMS(
