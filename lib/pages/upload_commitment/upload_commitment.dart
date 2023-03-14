@@ -71,7 +71,7 @@ class UploadCommitment extends ConsumerWidget {
 
                                 print("MESSAGE: $message");
 
-                                ref
+                                await ref
                                     .watch(csvProvider.notifier)
                                     .encryptData(message);
                                 List<String> recipents = ["+962799440933"];
