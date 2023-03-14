@@ -19,7 +19,7 @@ class CommitmentListPage extends ConsumerWidget {
         child: Container(
           padding: const EdgeInsets.all(16.0),
           child: ListView.builder(
-            itemCount: commitmentList!.length,
+            itemCount: commitmentList.length,
             itemBuilder: (context, index) {
               final commitment = commitmentList[index];
               return Card(
