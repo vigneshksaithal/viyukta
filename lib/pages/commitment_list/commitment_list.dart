@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:viyukta/provider/commitment_list.dart';
-import 'package:viyukta/theme/theme.dart';
+import '../../provider/commitment_list.dart';
+import '../../theme/theme.dart';
 
 class CommitmentListPage extends ConsumerWidget {
   const CommitmentListPage({super.key});
