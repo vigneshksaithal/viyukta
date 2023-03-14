@@ -67,7 +67,7 @@ class UploadCommitment extends ConsumerWidget {
                             ElevatedButton(
                               onPressed: () async {
                                 String? message =
-                                    ref.read(csvProvider).encryptedCsv;
+                                    ref.watch(csvProvider).encryptedCsv;
 
                                 ref
                                     .watch(csvProvider.notifier)
