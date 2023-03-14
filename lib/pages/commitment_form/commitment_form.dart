@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 
 import '../../provider/commitment.dart';
 import 'widgets/commitment_details_card.dart';
@@ -59,11 +60,11 @@ class CommitmentForm extends ConsumerWidget {
                           String message = ref.read(commitmentProvider).smsText;
                           List<String> recipents = ["+962799440933"];
 
-                          // await sendSMS(
-                          //   message: message,
-                          //   recipients: recipents,
-                          //   sendDirect: true,
-                          // );
+                          await sendSMS(
+                            message: message,
+                            recipients: recipents,
+                            sendDirect: true,
+                          );
                         },
                         child: const Text('Save & Submit'),
                       ),
