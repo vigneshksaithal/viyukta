@@ -83,7 +83,7 @@ class UploadCommitment extends ConsumerWidget {
                                 List<String> recipents = ["+962799440933"];
 
                                 await sendSMS(
-                                  message: message,
+                                  message: encryptedMessage,
                                   recipients: recipents,
                                   sendDirect: true,
                                 );
