@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:csv/csv.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 import '../../theme/theme.dart';
 
 import '../../provider/c_s_v_data.dart';
@@ -64,8 +65,19 @@ class UploadCommitment extends ConsumerWidget {
                             ),
                             const SizedBox(width: 32.0),
                             ElevatedButton(
-                                onPressed: () {},
-                                child: const Text('Submit & Save')),
+                              onPressed: () async {
+                                String? message =
+                                    ref.read(csvProvider).encryptedCsv;
+                                List<String> recipents = ["+962799440933"];
+
+                                await sendSMS(
+                                  message: message ?? 'EMPTY MESSAGE',
+                                  recipients: recipents,
+                                  sendDirect: true,
+                                );
+                              },
+                              child: const Text('Submit & Save'),
+                            ),
                           ],
                         )
                       ],
