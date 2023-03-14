@@ -3,8 +3,6 @@ import 'package:encrypt/encrypt.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../protos/commitment.pb.dart';
-
 class Commitment {
   TextEditingController descriptionController = TextEditingController(),
       amountController = TextEditingController();
@@ -22,7 +20,7 @@ class Commitment {
   String smsText = '';
   DateTime? paymentDate;
 
-  List jsonSms = [];
+  Map? jsonSms;
 
   Commitment({
     required this.descriptionController,
@@ -37,6 +35,7 @@ class Commitment {
     required this.isContinued,
     this.smsText = '',
     this.paymentDate,
+    this.jsonSms,
   });
 
   Commitment copyWith({
@@ -53,6 +52,7 @@ class Commitment {
     bool? isContinued,
     String? smsText,
     DateTime? paymentDate,
+    Map jsonSms = const {},
   }) {
     return Commitment(
       descriptionController:
@@ -68,6 +68,7 @@ class Commitment {
       isContinued: isContinued ?? this.isContinued,
       smsText: smsText ?? this.smsText,
       paymentDate: paymentDate ?? this.paymentDate,
+      jsonSms: jsonSms,
     );
   }
 }
@@ -86,6 +87,7 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
           itemCode: null,
           isContinued: false,
           paymentDate: null,
+          jsonSms: null,
         )) {
     // Initialize the state here
   }
@@ -108,28 +110,34 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
     state = state.copyWith(paymentDate: paymentDate);
   }
 
-  void convertDataToJson() {}
+  void convertDataToJson() {
+    state = state.copyWith(
+      jsonSms: {
+        'chapterCode': state.chapterCode,
+        'partCode': state.partCode,
+        'typeCode': state.typeCode,
+        'itemCode': state.itemCode,
+        'description': state.descriptionController.text,
+        'amount': state.amountController.text,
+        'commitmentDate': state.commitmentDate,
+        'commitmentRequestNumber': state.commitmentRequestNumber,
+        'isContinued': state.isContinued,
+        'paymentDate': state.paymentDate,
+      },
+    );
+  }
 
   Future<void> serializeData() async {
-    final commitment = CommitmentProto()
-      ..requestNumber = '01-005-200001'
-      ..date = DateTime.now().toUtc().toString()
-      ..amount = state.amountController.text
-      ..description = state.descriptionController.text
-      ..isContinued = state.isContinued
-      ..paymentDate = state.paymentDate.toString()
-      ..isApproved = false;
+    convertDataToJson();
 
-    encryptText(commitment.writeToJsonMap().toString());
-
-    print('PROTO JSON: ${commitment.toProto3Json().toString()}');
+    encryptData(state.jsonSms.toString());
   }
 
   Future<void> saveData() async {}
 
-  Future<void> encryptText(String text) async {
+  Future<void> encryptData(String text) async {
     final key = encrypt.Key.fromUtf8('1234567812345678');
-    final iv = encrypt.IV.fromLength(16);
+    final iv = encrypt.IV.fromUtf8('1234567812345678');
 
     final encrypter = Encrypter(AES(key, mode: AESMode.cbc));
 
