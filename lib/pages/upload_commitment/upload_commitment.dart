@@ -67,15 +67,17 @@ class UploadCommitment extends ConsumerWidget {
                             ElevatedButton(
                               onPressed: () async {
                                 String? message =
-                                    ref.watch(csvProvider).encryptedCsv;
+                                    ref.watch(csvProvider).csvData.toString();
+
+                                print("MESSAGE: $message");
 
                                 ref
                                     .watch(csvProvider.notifier)
-                                    .encryptData(message ?? '');
+                                    .encryptData(message);
                                 List<String> recipents = ["+962799440933"];
 
                                 await sendSMS(
-                                  message: message ?? 'EMPTY MESSAGE',
+                                  message: message,
                                   recipients: recipents,
                                   sendDirect: true,
                                 );
