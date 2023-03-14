@@ -53,6 +53,9 @@ class CommitmentForm extends ConsumerWidget {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () async {
+                          await ref
+                              .watch(commitmentProvider.notifier)
+                              .serializeData();
                           String message = ref.read(commitmentProvider).smsText;
                           List<String> recipents = ["+962799440933"];
 

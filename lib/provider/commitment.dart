@@ -3,6 +3,8 @@ import 'package:encrypt/encrypt.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../protos/commitment.pb.dart';
+
 class Commitment {
   TextEditingController descriptionController = TextEditingController(),
       amountController = TextEditingController();
@@ -106,24 +108,22 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
     state = state.copyWith(paymentDate: paymentDate);
   }
 
-  void convertDataToJson() {
-    
+  void convertDataToJson() {}
+
+  Future<void> serializeData() async {
+    final commitment = CommitmentProto()
+      ..requestNumber = '01-005-200001'
+      ..date = DateTime.now().toUtc().toString()
+      ..amount = state.amountController.text
+      ..description = state.descriptionController.text
+      ..isContinued = state.isContinued
+      ..paymentDate = state.paymentDate.toString()
+      ..isApproved = false;
+
+    encryptText(commitment.writeToJsonMap().toString());
+
+    print('PROTO JSON: ${commitment.toProto3Json().toString()}');
   }
-
-  // Future<void> serializeData() async {
-  //   final commitment = CommitmentProto()
-  //     ..requestNumber = '01-005-200001'
-  //     ..date = DateTime.now().toUtc().toString()
-  //     ..amount = state.amountController.text
-  //     ..description = state.descriptionController.text
-  //     ..isContinued = state.isContinued
-  //     ..paymentDate = state.paymentDate.toString()
-  //     ..isApproved = false;
-
-  //   encryptText(commitment.writeToJsonMap().toString());
-
-  //   print('PROTO JSON: ${commitment.toProto3Json().toString()}');
-  // }
 
   Future<void> saveData() async {}
 
@@ -141,8 +141,6 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
 
     print('ENCRYPTED DATA: ${encrypted.base64} ${encrypted.base64.length}');
   }
-
-  Future<void> descryptText() async {}
 
   void resetForm() {
     state = Commitment(
