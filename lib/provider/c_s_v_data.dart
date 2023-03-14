@@ -43,7 +43,7 @@ class CSVNotifier extends StateNotifier<CSVData> {
 
   Future<void> encryptData(String text) async {
     final key = encrypt.Key.fromUtf8('1234567812345678');
-    final iv = encrypt.IV.fromUtf8('1234567812345678');
+    final iv = encrypt.IV.fromLength(16);
 
     final encrypter = Encrypter(AES(key, mode: AESMode.cbc));
 
