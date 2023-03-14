@@ -8,7 +8,8 @@ class CommitmentListPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List commitmentList = ref.watch(commitmentListProvider).commitmentList;
+    List<Map>? commitmentList =
+        ref.watch(commitmentListProvider).commitmentList;
 
     return Scaffold(
       appBar: AppBar(
@@ -18,7 +19,7 @@ class CommitmentListPage extends ConsumerWidget {
         child: Container(
           padding: const EdgeInsets.all(16.0),
           child: ListView.builder(
-            itemCount: commitmentList.length,
+            itemCount: commitmentList!.length,
             itemBuilder: (context, index) {
               final commitment = commitmentList[index];
               return Card(
