@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:viyukta/provider/organization_details.dart';
+import '../../../provider/organization_details.dart';
 
 import '../../../theme/theme.dart';
 
