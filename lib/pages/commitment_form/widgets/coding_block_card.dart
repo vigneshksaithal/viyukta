@@ -10,11 +10,18 @@ class CodingBlockCard extends ConsumerWidget {
   static const chapterCodes = [
     'A1',
     'A2',
+    'A3',
+    'A4',
+    'A5',
   ];
 
   static const partCodes = [
     'A11',
+    'A12',
+    'A13',
     'A21',
+    'A22',
+    'A23',
   ];
 
   // static const typeCodes = [
