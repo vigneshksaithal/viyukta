@@ -189,10 +189,10 @@ packages:
     dependency: transitive
     description:
       name: dart_style
-      sha256: "5be16bf1707658e4c03078d4a9b90208ded217fb02c163e207d334082412f2fb"
+      sha256: "6d691edde054969f0e0f26abb1b30834b5138b963793e56f69d3a9a4435e6352"
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.5"
+    version: "2.3.0"
   encrypt:
     dependency: "direct main"
     description:
@@ -278,14 +278,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_hooks:
-    dependency: "direct main"
-    description:
-      name: flutter_hooks
-      sha256: "6a126f703b89499818d73305e4ce1e3de33b4ae1c5512e3b8eab4b986f46774c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.18.6"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -306,10 +298,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_riverpod
-      sha256: "3ea325c2de7ef2589023413c489875467730b2c1d822759efedd3e0e28a906c9"
+      sha256: b3c3a8a9714b7f88dd2a41e1efbc47f76d620b06ab427c62ae7bc82298cd7dbb
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.1"
+    version: "2.3.2"
   flutter_sms:
     dependency: "direct main"
     description:
@@ -384,14 +376,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-  hooks_riverpod:
-    dependency: "direct main"
-    description:
-      name: hooks_riverpod
-      sha256: f62f1450c0f5b6f8914cc9d971488c6fb0f1e36e5e1c9b726e8f95688d6ee462
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.1"
   http:
     dependency: transitive
     description:
@@ -464,6 +448,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+  lzstring:
+    dependency: "direct main"
+    description:
+      name: lzstring
+      sha256: "3aa966276ef903485732ac1306598556451ff31a342378510f110304bcf2be27"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0+2"
   matcher:
     dependency: transitive
     description:
@@ -521,7 +513,7 @@ packages:
     source: hosted
     version: "1.8.2"
   path_provider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: path_provider
       sha256: "04890b994ee89bfa80bf3080bfec40d5a92c5c7a785ebb02c13084a099d2b6f9"
@@ -616,14 +608,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
-  protobuf:
-    dependency: "direct main"
-    description:
-      name: protobuf
-      sha256: "01dd9bd0fa02548bf2ceee13545d4a0ec6046459d847b6b061d8a27237108a08"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.0"
   pub_semver:
     dependency: transitive
     description:
@@ -644,10 +628,10 @@ packages:
     dependency: transitive
     description:
       name: riverpod
-      sha256: "7da5a0febdb7fd0e4340f7b7023cb8f17cf7acd405b1e67a0e98bf574085bfa5"
+      sha256: b0fbf7927333c5c318f7e2c22c8b4fd2542ba294de0373e80ecdb34e0dcd8dc4
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.1"
+    version: "2.3.2"
   shelf:
     dependency: transitive
     description:
