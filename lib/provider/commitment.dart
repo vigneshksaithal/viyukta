@@ -106,6 +106,10 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
     state = state.copyWith(chapterCode: chapterCode);
   }
 
+  void setPartCode(String chapterCode) {
+    state = state.copyWith(partCode: chapterCode);
+  }
+
   void setPaymentDate(DateTime paymentDate) {
     state = state.copyWith(paymentDate: paymentDate);
   }
@@ -113,16 +117,12 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
   void convertDataToJson() {
     state = state.copyWith(
       jsonSms: {
-        'chapterCode': state.chapterCode,
-        'partCode': state.partCode,
-        'typeCode': state.typeCode,
-        'itemCode': state.itemCode,
-        'description': state.descriptionController.text,
-        'amount': state.amountController.text,
-        'commitmentDate': state.commitmentDate,
-        'commitmentRequestNumber': state.commitmentRequestNumber,
-        'isContinued': state.isContinued,
-        'paymentDate': state.paymentDate,
+        'cCode': state.chapterCode,
+        'pCode': state.partCode,
+        'desc': state.descriptionController.text,
+        'amt': state.amountController.text,
+        'contd': state.isContinued,
+        'pDat': state.paymentDate,
       },
     );
   }
@@ -130,7 +130,12 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
   Future<void> serializeData() async {
     convertDataToJson();
 
-    encryptData(state.jsonSms.toString());
+    print('CONVERT JSON DATA: ${state.jsonSms.toString()}');
+
+    await encryptData(state.jsonSms.toString());
+
+    print(
+        'JSON DATA: ${state.jsonSms.toString()} ${state.jsonSms.toString().length}');
   }
 
   Future<void> saveData() async {}
@@ -143,11 +148,10 @@ class CommitmentNotifier extends StateNotifier<Commitment> {
 
     final encrypted = encrypter.encrypt(text, iv: iv);
 
-    state.smsText = encrypted.base64;
-
     state = state.copyWith(smsText: encrypted.base64);
 
-    print('ENCRYPTED DATA: ${encrypted.base64} ${encrypted.base64.length}');
+    print(
+        'ENCRYPTED DATA: |||${encrypted.base64}||| ${encrypted.base64.length}');
   }
 
   void resetForm() {

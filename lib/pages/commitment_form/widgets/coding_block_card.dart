@@ -8,28 +8,29 @@ class CodingBlockCard extends ConsumerWidget {
   const CodingBlockCard({super.key});
 
   static const chapterCodes = [
-    'A1 - Compensation Of Employees',
-    'A2 - Acquisition of Fixed Assets',
+    'A1',
+    'A2',
   ];
 
   static const partCodes = [
-    'A11 - Salaries In Cash',
-    'A21 - Acquisition of Tangible Fixed Assets',
+    'A11',
+    'A21',
   ];
 
-  static const typeCodes = [
-    'A111 - Salaries in Cash for Teachers',
-    'A211 - Acquisition of ICT Equipment and Software',
-  ];
+  // static const typeCodes = [
+  //   'A111 - Salaries in Cash for Teachers',
+  //   'A211 - Acquisition of ICT Equipment and Software',
+  // ];
 
-  static const itemCodes = [
-    'A1111 - Teachers Basic Salary',
-    'A2111 - Acquisition of Laptops',
-  ];
+  // static const itemCodes = [
+  //   'A1111 - Teachers Basic Salary',
+  //   'A2111 - Acquisition of Laptops',
+  // ];
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     String? chapterCode = ref.watch(commitmentProvider).chapterCode;
+    String? partCode = ref.watch(commitmentProvider).partCode;
 
     return Card(
       child: Padding(
@@ -54,22 +55,22 @@ class CodingBlockCard extends ConsumerWidget {
               style: textTheme().labelMedium,
             ),
             const SizedBox(height: 16.0),
-            partCodeDropdownField(chapterCode, ref),
+            partCodeDropdownField(partCode, ref),
             // const Divider(),
-            const SizedBox(height: 32.0),
-            Text(
-              'Type Code',
-              style: textTheme().labelMedium,
-            ),
-            const SizedBox(height: 16.0),
-            typeCodeDropdownField(chapterCode, ref),
-            const SizedBox(height: 32.0),
-            Text(
-              'Item Code',
-              style: textTheme().labelMedium,
-            ),
-            const SizedBox(height: 16.0),
-            itemCodeDropdownField(chapterCode, ref),
+            // const SizedBox(height: 32.0),
+            // Text(
+            //   'Type Code',
+            //   style: textTheme().labelMedium,
+            // ),
+            // const SizedBox(height: 16.0),
+            // typeCodeDropdownField(chapterCode, ref),
+            // const SizedBox(height: 32.0),
+            // Text(
+            //   'Item Code',
+            //   style: textTheme().labelMedium,
+            // ),
+            // const SizedBox(height: 16.0),
+            // itemCodeDropdownField(chapterCode, ref),
           ],
         ),
       ),
@@ -133,7 +134,7 @@ class CodingBlockCard extends ConsumerWidget {
   }
 
   DropdownButtonFormField<String> partCodeDropdownField(
-      String? chapterCode, WidgetRef ref) {
+      String? partCode, WidgetRef ref) {
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
         border: OutlineInputBorder(
@@ -141,7 +142,7 @@ class CodingBlockCard extends ConsumerWidget {
         ),
         focusColor: Colors.grey[400],
       ),
-      value: chapterCode,
+      value: partCode,
       isExpanded: true,
       borderRadius: BorderRadius.circular(16.0),
       elevation: 1,
@@ -149,13 +150,13 @@ class CodingBlockCard extends ConsumerWidget {
         'Select Part Code',
         style: textTheme().labelMedium,
       ),
-      items: chapterCodes.map(buildMenuItem).toList(),
+      items: partCodes.map(buildMenuItem).toList(),
       onChanged: (value) {
-        chapterCode = value;
+        partCode = value;
 
-        ref.read(commitmentProvider.notifier).setChapterCode(chapterCode!);
+        ref.read(commitmentProvider.notifier).setPartCode(partCode!);
 
-        print(chapterCode);
+        print(partCode);
       },
     );
   }
