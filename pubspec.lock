@@ -17,14 +17,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.7.1"
-  archive:
-    dependency: transitive
-    description:
-      name: archive
-      sha256: d6347d54a2d8028e0437e3c099f66fdb8ae02c4720c1e7534c9f24c10351f85d
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.3.6"
   args:
     dependency: transitive
     description:
@@ -201,38 +193,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.1"
-  equatable:
-    dependency: transitive
-    description:
-      name: equatable
-      sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.5"
-  excel:
-    dependency: "direct main"
-    description:
-      name: excel
-      sha256: "3b0751b14128f10e7bfde4e13cefb82e7c020006d1270efa82e138cb80605a99"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.4"
-  excel_facility:
-    dependency: transitive
-    description:
-      name: excel_facility
-      sha256: "8766c481efa1896178417475fcf90027e0c5c3efd33c9049b728b0a3638d07d0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
-  excel_to_json:
-    dependency: "direct main"
-    description:
-      name: excel_to_json
-      sha256: "8fc8a053967ced7baafc07586ba83c6c02ebb1dbbde1b5484612d5cb3197af5e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
   fake_async:
     dependency: transitive
     description:
@@ -560,14 +520,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.5"
-  petitparser:
-    dependency: transitive
-    description:
-      name: petitparser
-      sha256: "49392a45ced973e8d94a85fdb21293fbb40ba805fc49f2965101ae748a3683b4"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.1.0"
   platform:
     dependency: transitive
     description:
@@ -853,14 +805,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-  xml:
-    dependency: transitive
-    description:
-      name: xml
-      sha256: "979ee37d622dec6365e2efa4d906c37470995871fe9ae080d967e192d88286b5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.2.2"
   yaml:
     dependency: transitive
     description:

@@ -1,4 +1,4 @@
-name: Viyukta
+name: viyukta
 description: An offline app.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -10,8 +10,6 @@ environment:
 dependencies:
   csv: ^5.0.1
   encrypt: ^5.0.1
-  excel: ^2.0.4
-  excel_to_json: ^1.1.0
   file_picker: ^5.2.6
   flutter:
     sdk: flutter
