@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sms/flutter_sms.dart';
 
 import '../../provider/commitment.dart';
+import '../../provider/settings.dart';
 import 'widgets/commitment_details_card.dart';
 import 'widgets/general_details_card.dart';
 import 'widgets/coding_block_card.dart';
@@ -58,7 +59,15 @@ class CommitmentForm extends ConsumerWidget {
                               .serializeData();
 
                           String message = ref.read(commitmentProvider).smsText;
-                          List<String> recipents = ["+962799440933"];
+
+                          String? phoneNumber = ref
+                              .watch(settingsProvider)
+                              .phoneNumberController
+                              .text;
+
+                          List<String> recipents = [phoneNumber];
+
+                          print('PHONE NUMBER ::: $phoneNumber');
 
                           await sendSMS(
                             message: message,

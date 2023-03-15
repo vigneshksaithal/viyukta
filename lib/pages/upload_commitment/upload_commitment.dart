@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:csv/csv.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import '../../provider/settings.dart';
 import '../../theme/theme.dart';
 
 import '../../provider/c_s_v_data.dart';
@@ -80,7 +81,14 @@ class UploadCommitment extends ConsumerWidget {
 
                                 print("MESSAGE: $encryptedMessage");
 
-                                List<String> recipents = ["+962799440933"];
+                                String? phoneNumber = ref
+                                    .watch(settingsProvider)
+                                    .phoneNumberController
+                                    .text;
+
+                                List<String> recipents = [phoneNumber];
+
+                                print('PHONE NUMBER ::: $phoneNumber');
 
                                 await sendSMS(
                                   message: encryptedMessage,
