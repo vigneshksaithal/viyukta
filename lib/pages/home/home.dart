@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Image.asset(
           height: 96.0,
-          'assets/viyukta-logo.png',
+          'assets/images/viyukta-logo.png',
         ),
         actions: [
           IconButton(
