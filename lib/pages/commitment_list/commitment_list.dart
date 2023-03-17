@@ -16,7 +16,7 @@ class CommitmentListPage extends ConsumerWidget {
         title: const Text('Commitment List'),
       ),
       body: SafeArea(
-        child: Container(
+        child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ListView.builder(
             itemCount: commitmentList.length,
@@ -32,18 +32,14 @@ class CommitmentListPage extends ConsumerWidget {
                   title: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        child: Expanded(
-                          child: Text(
-                            '${commitment['description']}',
-                            style: textTheme().bodySmall?.copyWith(
-                                  fontSize: 18.0,
-                                  color: Colors.grey[800],
-                                  fontWeight: FontWeight.w500,
-                                ),
-                            overflow: TextOverflow.clip,
-                          ),
-                        ),
+                      Text(
+                        '${commitment['description']}',
+                        style: textTheme().bodySmall?.copyWith(
+                              fontSize: 18.0,
+                              color: Colors.grey[800],
+                              fontWeight: FontWeight.w500,
+                            ),
+                        overflow: TextOverflow.clip,
                       ),
                       const SizedBox(height: 24),
                       Text(
@@ -67,13 +63,6 @@ class CommitmentListPage extends ConsumerWidget {
                                   : Colors.red[600],
                             ),
                       ),
-                      // const SizedBox(height: 24),
-                      // Text(
-                      //   '${commitment['amount']}',
-                      //   style: textTheme().bodySmall?.copyWith(
-                      //       color: Colors.grey[600],
-                      //       fontWeight: FontWeight.w500),
-                      // ),
                     ],
                   ),
                 ),
