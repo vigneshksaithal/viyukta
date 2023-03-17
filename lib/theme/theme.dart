@@ -182,7 +182,7 @@ ElevatedButtonThemeData elevatedButtonTheme(context) {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    backgroundColor: Colors.grey[300],
+    backgroundColor: Colors.grey[100],
     iconTheme: const IconThemeData(
       color: Colors.black,
       weight: 800,
