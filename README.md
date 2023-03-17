@@ -7,5 +7,5 @@ This app was deisgned to transfer public finance data of Yemen to central databa
 ## Tech Stack
 
 - App Development: Flutter
-- Data Serialization: Protocol Buffers (ProtoBuf)
+- Data Serialization: JSON
 - Data Encryption: AES algorithm
