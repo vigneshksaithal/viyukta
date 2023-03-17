@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import '../settings/settings.dart';
@@ -89,7 +88,7 @@ class HomePage extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text('Upload Commitment (CSV)'),
+                    child: const Text('Upload Commitment'),
                   ),
                 ),
                 const SizedBox(height: 16.0),
