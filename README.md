@@ -1,4 +1,4 @@
-# Viyukta
+# viyukta
 
 Viyukta means offline in Sanskrit.
 
