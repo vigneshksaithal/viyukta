@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart';
-
 ThemeData themeData(BuildContext context) {
   return ThemeData(
     scaffoldBackgroundColor: Colors.grey[100],
-
     appBarTheme: appBarTheme(),
-    // primaryColor: Colors.green[500],
     elevatedButtonTheme: elevatedButtonTheme(context),
     outlinedButtonTheme: outlineButtonThemeData(),
     textButtonTheme: textButtonTheme(),
@@ -15,12 +11,28 @@ ThemeData themeData(BuildContext context) {
     cardTheme: cardTheme(),
     inputDecorationTheme: inputDecorationTheme(),
     dividerTheme: dividerThemeData(),
-    dropdownMenuTheme: DropdownMenuThemeData(
-      textStyle: TextStyle(
-        fontSize: 16.0,
-        fontWeight: FontWeight.w500,
-        color: Colors.grey[800],
-      ),
+    dropdownMenuTheme: dropdownMenuThemeData(),
+    switchTheme: switchThemeData(),
+  );
+}
+
+DropdownMenuThemeData dropdownMenuThemeData() {
+  return DropdownMenuThemeData(
+    textStyle: TextStyle(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w500,
+      color: Colors.grey[800],
+    ),
+  );
+}
+
+SwitchThemeData switchThemeData() {
+  return SwitchThemeData(
+    thumbColor: MaterialStateProperty.all(
+      Colors.white,
+    ),
+    trackColor: MaterialStateProperty.all(
+      Colors.grey[300],
     ),
   );
 }
@@ -35,14 +47,13 @@ DividerThemeData dividerThemeData() {
 
 InputDecorationTheme inputDecorationTheme() {
   return InputDecorationTheme(
-    labelStyle: const TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.normal,
+    labelStyle: TextStyle(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w500,
+      color: Colors.grey[800],
     ),
-    contentPadding: const EdgeInsets.symmetric(
-      vertical: 16.0,
-      horizontal: 16.0,
-    ),
+    contentPadding: const EdgeInsets.all(16.0),
+    alignLabelWithHint: true,
     filled: true,
     fillColor: Colors.grey[100],
     border: InputBorder.none,
@@ -171,7 +182,7 @@ ElevatedButtonThemeData elevatedButtonTheme(context) {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    backgroundColor: kBackgroundColor,
+    backgroundColor: Colors.grey[300],
     iconTheme: const IconThemeData(
       color: Colors.black,
       weight: 800,
