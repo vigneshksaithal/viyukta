@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../provider/organization_details.dart';
@@ -32,10 +33,12 @@ class OrganizationDetailsCard extends ConsumerWidget {
                 ),
                 const SizedBox(width: 16.0),
                 Expanded(
-                  child: Text(
-                    ref.read(organizationDetailsProvider).organizationName,
+                  child: AutoSizeText(
+                    ref.watch(organizationDetailsProvider).organizationName,
                     style: textTheme().bodyMedium,
-                    overflow: TextOverflow.clip,
+                    maxFontSize: 18,
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
@@ -50,7 +53,7 @@ class OrganizationDetailsCard extends ConsumerWidget {
                 ),
                 const SizedBox(width: 16.0),
                 Text(
-                  ref.read(organizationDetailsProvider).organizationType,
+                  ref.watch(organizationDetailsProvider).organizationType,
                   style: textTheme().bodyMedium,
                 ),
               ],
@@ -65,7 +68,7 @@ class OrganizationDetailsCard extends ConsumerWidget {
                 ),
                 const SizedBox(width: 16.0),
                 Text(
-                  ref.read(organizationDetailsProvider).organizationCode,
+                  ref.watch(organizationDetailsProvider).organizationCode,
                   style: textTheme().bodyMedium,
                 ),
               ],
@@ -81,9 +84,11 @@ class OrganizationDetailsCard extends ConsumerWidget {
                 ),
                 const SizedBox(width: 16.0),
                 Expanded(
-                  child: Text(
-                    ref.read(organizationDetailsProvider).organizationOfficer,
+                  child: AutoSizeText(
+                    ref.watch(organizationDetailsProvider).organizationOfficer,
                     style: textTheme().bodyMedium,
+                    minFontSize: 16,
+                    maxLines: 4,
                   ),
                 ),
               ],
