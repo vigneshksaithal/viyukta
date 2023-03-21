@@ -24,16 +24,6 @@ class CodingBlockCard extends ConsumerWidget {
     'A23',
   ];
 
-  // static const typeCodes = [
-  //   'A111 - Salaries in Cash for Teachers',
-  //   'A211 - Acquisition of ICT Equipment and Software',
-  // ];
-
-  // static const itemCodes = [
-  //   'A1111 - Teachers Basic Salary',
-  //   'A2111 - Acquisition of Laptops',
-  // ];
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     String? chapterCode = ref.watch(commitmentProvider).chapterCode;
@@ -63,21 +53,6 @@ class CodingBlockCard extends ConsumerWidget {
             ),
             const SizedBox(height: 16.0),
             partCodeDropdownField(partCode, ref),
-            // const Divider(),
-            // const SizedBox(height: 32.0),
-            // Text(
-            //   'Type Code',
-            //   style: textTheme().labelMedium,
-            // ),
-            // const SizedBox(height: 16.0),
-            // typeCodeDropdownField(chapterCode, ref),
-            // const SizedBox(height: 32.0),
-            // Text(
-            //   'Item Code',
-            //   style: textTheme().labelMedium,
-            // ),
-            // const SizedBox(height: 16.0),
-            // itemCodeDropdownField(chapterCode, ref),
           ],
         ),
       ),
