@@ -7,9 +7,18 @@ This app was developed to transfer public finance data of Yemen to central datab
 ## Tech Stack
 
 - App Development: Flutter
-- Data Serialization: JSON
+- Data Serialization: ProtoBuf, JSON
 - Data Encryption: AES algorithm
 
 ## Demo
 
 [![Demo](https://img.youtube.com/vi/HybwjlJrkDM/0.jpg)](https://www.youtube.com/watch?v=HybwjlJrkDM)
+
+## How to Install
+
+- Install Flutter SDK on your machine.
+- Download VS Code, then install Flutter & Dart extensions.
+- Fork this repo.
+- Clone your forked repo.
+- First, Run "flutter pub get" (in terminal) in the project directory to install dependencies.
+- Run "flutter run" (in terminal) [OR] press F5 to run the app on your device or emulator.
