@@ -14,6 +14,19 @@ This app was developed to transfer public finance data of Yemen to central datab
 
 [![Demo](https://img.youtube.com/vi/HybwjlJrkDM/0.jpg)](https://www.youtube.com/watch?v=HybwjlJrkDM)
 
+## Screenshots
+
+![Home](/assets/images/screenshots/home.jpg) ![Settings](/assets/images/screenshots/settings.jpg)
+
+![Home](/assets/images/screenshots/commitment-form-1.jpg) ![Settings](/assets/images/screenshots/commitment-form-2.jpg)
+
+![Home](/assets/images/screenshots/upload-commitment.jpg) ![Settings](/assets/images/screenshots/upload-commitment.jpg)
+
+## Advantages
+
+- Output size is very small as it is serialized using ProtoBuf.
+- Data is encrypted using AES algorithm.
+
 ## How to Install
 
 - Install Flutter SDK on your machine.
@@ -22,3 +35,7 @@ This app was developed to transfer public finance data of Yemen to central datab
 - Clone your forked repo.
 - First, Run "flutter pub get" (in terminal) in the project directory to install dependencies.
 - Run "flutter run" (in terminal) [OR] press F5 to run the app on your device or emulator.
+
+## How we can implement?
+
+## How we can improve?
