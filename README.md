@@ -18,9 +18,9 @@ This app was developed to transfer public finance data of Yemen to central datab
 
 ![Home](/assets/images/screenshots/home.jpg) ![Settings](/assets/images/screenshots/settings.jpg)
 
-![Home](/assets/images/screenshots/commitment-form-1.jpg) ![Settings](/assets/images/screenshots/commitment-form-2.jpg)
+![Commitment Form - 1](/assets/images/screenshots/commitment-form-1.jpg) ![Commitment Form - 2](/assets/images/screenshots/commitment-form-2.jpg)
 
-![Home](/assets/images/screenshots/upload-commitment.jpg) ![Settings](/assets/images/screenshots/upload-commitment.jpg)
+![Upload Commitment](/assets/images/screenshots/upload-commitment.jpg) ![Commitment List](/assets/images/screenshots/commitment-list.jpg)
 
 ## Advantages
 
