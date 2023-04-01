@@ -16,11 +16,7 @@ This app was developed to transfer public finance data of Yemen to central datab
 
 ## Screenshots
 
-![Home](/assets/images/screenshots/home.jpg) ![Settings](/assets/images/screenshots/settings.jpg)
-
-![Commitment Form - 1](/assets/images/screenshots/commitment-form-1.jpg) ![Commitment Form - 2](/assets/images/screenshots/commitment-form-2.jpg)
-
-![Upload Commitment](/assets/images/screenshots/upload-commitment.jpg) ![Commitment List](/assets/images/screenshots/commitment-list.jpg)
+![Viyukta App Screenshots](/assets/images/screenshots/viyukta-app-screeenshots.png)
 
 ## Advantages
 
