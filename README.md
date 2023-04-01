@@ -43,3 +43,9 @@ We can implement this prototype by the below steps,
 5. Update the frontend of the server.
 
 ## How we can improve?
+
+We can improve this service by following ways,
+
+- Using more keys for encryption and by using more secure encryption algorithm.
+- Building the app in native languages like Kotlin.
+- Descreasing fields in ProtoBuf schema by pre-storing metadata like organisation details in the server.
