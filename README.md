@@ -34,4 +34,11 @@ This app was developed to transfer public finance data of Yemen to central datab
 
 ## How we can implement?
 
+We can implement this prototype by the below steps,
+1. Get proper requirement details.
+2. Fine tune app frontend with the final requirements & build ProtoBuf schema(.proto) file.
+3. Build server which receives SMS from this number, authorizes this number and saves it on central database.
+4. Build a service where the server dashboard generates unique secret key for each device while registering.
+5. Update the frontend of the server.
+
 ## How we can improve?
