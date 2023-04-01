@@ -4,15 +4,19 @@ Viyukta means offline in Sanskrit.
 
 This app was developed to transfer public finance data of Yemen to central database without using internet.
 
+## Demo
+
+[![Demo](https://img.youtube.com/vi/HybwjlJrkDM/0.jpg)](https://www.youtube.com/watch?v=HybwjlJrkDM)
+
 ## Tech Stack
 
 - App Development: Flutter
 - Data Serialization: ProtoBuf, JSON
 - Data Encryption: AES algorithm
 
-## Demo
+## Architecture
 
-[![Demo](https://img.youtube.com/vi/HybwjlJrkDM/0.jpg)](https://www.youtube.com/watch?v=HybwjlJrkDM)
+![Viyukta App Architecture](/assets/images/viyukta-architecture.png)
 
 ## Screenshots
 
