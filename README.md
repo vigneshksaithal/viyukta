@@ -38,8 +38,6 @@ This app was developed to transfer public finance data of Yemen to central datab
 
 ## How we can implement?
 
-We can implement this prototype by the below steps,
-
 1. Get proper requirement details.
 2. Fine tune app frontend with the final requirements & build ProtoBuf schema(.proto) file.
 3. Build server which receives SMS from this number, authorizes this number and saves it on central database.
@@ -47,8 +45,6 @@ We can implement this prototype by the below steps,
 5. Update the frontend of the server.
 
 ## How we can improve?
-
-We can improve this service by following ways,
 
 - Using more keys for encryption and by using more secure encryption algorithm.
 - Building the app in native languages like Kotlin.
